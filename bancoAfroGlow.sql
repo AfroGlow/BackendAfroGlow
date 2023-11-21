@@ -51,8 +51,8 @@ CREATE TABLE usuario(
      genero VARCHAR(25) NOT NULL,
      email VARCHAR(130) NOT NULL,
      senha VARCHAR(160) NOT NULL,
-	 telefone INTEGER(11) NOT NULL,
-     cpf INT(11) NOT NULL,
+	 telefone VARCHAR(11) NOT NULL,
+     cpf VARCHAR(11) NOT NULL,
      `status` VARCHAR(25)
 );
  
