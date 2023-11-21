@@ -16,6 +16,6 @@ public class PlanosController {
 
     @GetMapping(value = "/{planosId}")
     public Planos getPlanos(@PathVariable Integer planosId) {
-        return planosService.buscaPlano(planosId);
+        return planosService.buscaPlanos(planosId);
 }
 }

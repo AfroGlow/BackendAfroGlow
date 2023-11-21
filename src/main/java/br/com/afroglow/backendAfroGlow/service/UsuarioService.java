@@ -16,8 +16,8 @@ public class UsuarioService {
         usuario.genero = "não-binari";
         usuario.email = "<ricardo.sao@hotmail.com>";
         usuario.senha = "<picoloVerde>";
-        usuario.telefone = "554888888";//ARRUMAR
-        usuario.cpf = "50651635824";//ARRUMAR
+        usuario.telefone = "554888888";
+        usuario.cpf = "50651635824";
         usuario.status = "não aceito na sociedade";
         return usuario;
     }
