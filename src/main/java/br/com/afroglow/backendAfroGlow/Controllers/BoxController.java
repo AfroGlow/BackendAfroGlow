@@ -1,11 +1,14 @@
 package br.com.afroglow.backendAfroGlow.Controllers;
-
+import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
 import br.com.afroglow.backendAfroGlow.Models.Box;
 
+@RestController
+@RequestMapping("/api/boxes")
 public class BoxController {
+
     private List<Box> listaDeBoxes;
 
     public BoxController() {
@@ -13,18 +16,21 @@ public class BoxController {
     }
 
     // Método para salvar um box
-    public void salvarBox(Box box) {
+    @PostMapping("/salvar")
+    public void salvarBox(@RequestBody Box box) {
         listaDeBoxes.add(box);
-        // Lógica adicional, como salvar no banco de dados, pode ser adicionada aqui
+       
     }
 
     // Método para buscar todos os boxes
+    @GetMapping("/todos")
     public List<Box> buscarTodosBoxes() {
         return listaDeBoxes;
     }
 
     // Método para buscar um box pelo tipo
-    public Box buscarBoxPorTipo(int tipoDeBox) {
+    @GetMapping("/buscarPorTipo/{tipoDeBox}")
+    public Box buscarBoxPorTipo(@PathVariable int tipoDeBox) {
         for (Box box : listaDeBoxes) {
             if (box.getTipoDeBox() == tipoDeBox) {
                 return box;
@@ -36,7 +42,8 @@ public class BoxController {
     // Outros métodos conforme necessário...
 
     // Exemplo de método para atualizar o preço de um box
-    public void atualizarPrecoBox(int tipoDeBox, double novoPreco) {
+    @PutMapping("/atualizarPreco/{tipoDeBox}")
+    public void atualizarPrecoBox(@PathVariable int tipoDeBox, @RequestParam double novoPreco) {
         for (Box box : listaDeBoxes) {
             if (box.getTipoDeBox() == tipoDeBox) {
                 box.setPreco(novoPreco);
@@ -48,9 +55,9 @@ public class BoxController {
     }
 
     // Exemplo de método para deletar um box
-    public void deletarBox(int tipoDeBox) {
+    @DeleteMapping("/deletar/{tipoDeBox}")
+    public void deletarBox(@PathVariable int tipoDeBox) {
         listaDeBoxes.removeIf(box -> box.getTipoDeBox() == tipoDeBox);
         // Lógica adicional, como deletar do banco de dados, pode ser adicionada aqui
     }
 }
-
