@@ -1,25 +1,42 @@
 package br.com.afroglow.backendAfroGlow.Models;
 
 public class Box {
+
     private int tipoDeBox;
+    private String descricao;
     private double preco;
-    private int qtdDeProdutos;
 
+  
+    public Box() {
+    }
 
-    // Exemplo de construtor
-    public Box(int tipoDeBox, double preco, int qtdDeProdutos) {
+    public Box(int tipoDeBox, String descricao, double preco) {
         this.tipoDeBox = tipoDeBox;
+        this.descricao = descricao;
         this.preco = preco;
-        this.qtdDeProdutos = qtdDeProdutos;
     }
 
     public int getTipoDeBox() {
-        return 0;
+        return tipoDeBox;
     }
 
-    public void setPreco(double novoPreco) {
-      // TODO document why this method is empty
+    public void setTipoDeBox(int tipoDeBox) {
+        this.tipoDeBox = tipoDeBox;
     }
 
-    // Getters e setters...
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public double getPreco() {
+        return preco;
+    }
+
+    public void setPreco(double preco) {
+        this.preco = preco;
+    }
 }
