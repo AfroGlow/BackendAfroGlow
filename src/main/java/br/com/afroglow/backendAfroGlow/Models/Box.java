@@ -1,13 +1,29 @@
 package br.com.afroglow.backendAfroGlow.Models;
 
+import br.com.afroglow.backendAfroGlow.Controllers.BoxRequestDTO;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class Box {
+
+       @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     private int tipoDeBox;
     private String descricao;
     private double preco;
 
-  
     public Box() {
+    }
+  
+    public Box(BoxRequestDTO data) {
+        this.tipoDeBox = data.getTipoDeBox();
+        this.descricao = data.getDescricao();
+        this.preco = data.getPreco();
     }
 
     public Box(int tipoDeBox, String descricao, double preco) {
