@@ -1,69 +1,49 @@
 package br.com.afroglow.backendAfroGlow.Controllers;
 
-
-import com.google.gson.Gson;
-
 import br.com.afroglow.backendAfroGlow.Models.Endereco;
-import spark.Request;
-import spark.Response;
-import static spark.Spark.*;
+import br.com.afroglow.backendAfroGlow.Service.EnderecoService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 
-
+@RestController
+@RequestMapping("/api")
 public class EnderecoController {
 
-    private final Endereco endereco;
+    private final EnderecoService enderecoService;
 
-    public EnderecoController(Endereco endereco) {
-        this.endereco = endereco;
-        configurarRotas();
+    @Autowired
+    public EnderecoController(EnderecoService enderecoService) {
+        this.enderecoService = enderecoService;
     }
 
-    private void configurarRotas() {
-        // Rota para adicionar um endereço
-        post("/endereco", (request, response) -> adicionarEndereco(request, response), new Gson()::toJson);
-
-        // Rota para visualizar o endereço
-        get("/endereco", (request, response) -> visualizarEndereco(request, response), new Gson()::toJson);
-
-        // Rota para atualizar o endereço
-        put("/endereco", (request, response) -> atualizarEndereco(request, response), new Gson()::toJson);
-
-        // Rota para deletar o endereço
-        delete("/endereco", (request, response) -> deletarEndereco(request, response), new Gson()::toJson);
+    @PostMapping
+    public ResponseEntity<Endereco> adicionarEndereco(@RequestBody Endereco endereco) {
+        enderecoService.adicionarEndereco(endereco);
+        return new ResponseEntity<>(endereco, HttpStatus.CREATED);
     }
 
-    private String adicionarEndereco(Request request, Response response) {
-        EnderecoRequest enderecoRequest = new Gson().fromJson(request.body(), EnderecoRequest.class);
-        endereco.adicionarEndereco(enderecoRequest.rua, enderecoRequest.cidade, enderecoRequest.estado, enderecoRequest.cep);
-        response.status(201); // Código de status 201 para indicar que o recurso foi criado
-        return "Endereço adicionado com sucesso!";
+    @GetMapping("/{enderecoId}")
+    public ResponseEntity<Endereco> visualizarEndereco(@PathVariable Long enderecoId) {
+        Endereco endereco = enderecoService.visualizarEndereco(enderecoId);
+
+        if (endereco != null) {
+            return new ResponseEntity<>(endereco, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
     }
 
-    private String visualizarEndereco(Request request, Response response) {
-        endereco.visualizarEndereco();
-        return new Gson().toJson(endereco);
+    @PutMapping
+    public ResponseEntity<Endereco> atualizarEndereco(@RequestBody Endereco endereco) {
+        enderecoService.atualizarEndereco(endereco);
+        return new ResponseEntity<>(endereco, HttpStatus.OK);
     }
 
-    private String atualizarEndereco(Request request, Response response) {
-        EnderecoRequest enderecoRequest = new Gson().fromJson(request.body(), EnderecoRequest.class);
-        endereco.atualizarEndereco(enderecoRequest.rua, enderecoRequest.cidade, enderecoRequest.estado, enderecoRequest.cep);
-        return "Endereço atualizado com sucesso!";
-    }
-
-    private String deletarEndereco(Request request, Response response) {
-        endereco.deletarEndereco();
-        return "Endereço deletado com sucesso!";
-    }
-
-    // Classe auxiliar para a requisição JSON
-    private static class EnderecoRequest {
-        String rua;
-        String cidade;
-        String estado;
-        String cep;
-    }
-
-    public static void main(String[] args) {
-        new EnderecoController(new Endereco());
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deletarEndereco(@PathVariable Long id) {
+        enderecoService.deletarEndereco(id);
+        return new ResponseEntity<>("Endereço deletado com sucesso!", HttpStatus.OK);
     }
 }

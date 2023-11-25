@@ -1,16 +1,22 @@
 package br.com.afroglow.backendAfroGlow.Models;
 
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+@Entity
 public class Endereco {
 
+
+    @Id
     private String rua;
-    private String numero;
     private String bairro;
+    private String numero;
     private String complemento;
     private String cidade;
     private String estado;
@@ -27,24 +33,18 @@ public class Endereco {
         this.cep = "";
     }
 
-    // Método para estabelecer a conexão com o banco de dados SQLite
-    private Connection conectar() throws SQLException {
-        String url = "jdbc:sqlite://localhost:3307/bdafroglow";
-        return DriverManager.getConnection(url);
-    }
-
-    // Método para adicionar um endereço no banco de dados
+    // Método para adicionar uma descrição no banco de dados
     public void adicionarEndereco() {
         try (Connection conexao = Conexao.obterConexao()) {
-            String sql = "INSERT INTO endereco (rua, numero, bairro, complemento, cidade, estado, cep) VALUES (?, ?, ?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO endereco (rua, bairro, numero, complemento, cidade, estado, cep ) VALUES (?, ?, ?, ?, ?, ?, ?)";
             try (PreparedStatement statement = conexao.prepareStatement(sql)) {
                 statement.setString(1, rua);
-                statement.setString(2, numero);
-                statement.setString(3, bairro);
+                statement.setString(2, bairro);
+                statement.setString(3, numero);
                 statement.setString(4, complemento);
                 statement.setString(5, cidade);
                 statement.setString(6, estado);
-                statement.setString(7, cep);
+                statement.setString(7,cep);
                 statement.executeUpdate();
                 System.out.println("Endereço adicionado com sucesso!");
             }
@@ -53,22 +53,22 @@ public class Endereco {
         }
     }
 
-    // Método para visualizar o endereço a partir do banco de dados
+    // Método para visualizar a descrição a partir do banco de dados
     public void visualizarEndereco() {
         try (Connection conexao = Conexao.obterConexao()) {
-            String sql = "SELECT rua, numero, bairro, complemento, cidade, estado, cep FROM endereco";
+            String sql = "SELECT rua, bairro, numero, complemento, cidade, estado, cep FROM endereco";
             try (PreparedStatement statement = conexao.prepareStatement(sql)) {
                 ResultSet resultSet = statement.executeQuery();
                 if (resultSet.next()) {
                     this.rua = resultSet.getString("rua");
-                    this.numero = resultSet.getString("numero");
                     this.bairro = resultSet.getString("bairro");
+                    this.numero = resultSet.getString("numero");
                     this.complemento = resultSet.getString("complemento");
                     this.cidade = resultSet.getString("cidade");
                     this.estado = resultSet.getString("estado");
                     this.cep = resultSet.getString("cep");
                 } else {
-                    System.out.println("Nenhum endereço encontrado.");
+                    System.out.println("Nenhum Endereço encontrada.");
                 }
             }
         } catch (SQLException e) {
@@ -76,14 +76,14 @@ public class Endereco {
         }
     }
 
-    // Método para atualizar o endereço no banco de dados
+    // Método para atualizar o Endereço no banco de dados
     public void atualizarEndereco() {
         try (Connection conexao = Conexao.obterConexao()) {
-            String sql = "UPDATE endereco SET rua=?, numero=?, bairro=?, complemento=?, cidade=?, estado=?, cep=?";
+            String sql = "UPDATE endereco SET rua=?, bairro=?, numero=?, complemento=?, cidade=?, estado=?, cep=?";
             try (PreparedStatement statement = conexao.prepareStatement(sql)) {
                 statement.setString(1, rua);
-                statement.setString(2, numero);
-                statement.setString(3, bairro);
+                statement.setString(2, bairro);
+                statement.setString(3, numero);
                 statement.setString(4, complemento);
                 statement.setString(5, cidade);
                 statement.setString(6, estado);
@@ -96,22 +96,59 @@ public class Endereco {
         }
     }
 
-    // Método para deletar o endereço do banco de dados
-    public void deletarEndereco() {
-        try (Connection conexao = Conexao.obterConexao()) {
-            String sql = "DELETE FROM endereco";
-            try (PreparedStatement statement = conexao.prepareStatement(sql)) {
-                statement.executeUpdate();
-                System.out.println("Endereço deletado com sucesso!");
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+    public String getRua() {
+        return rua;
     }
 
-    public void adicionarEndereco(String rua2, String cidade2, String estado2, String cep2) {
+    public void setRua(String rua) {
+        this.rua = rua;
     }
 
-    public void atualizarEndereco(String rua2, String cidade2, String estado2, String cep2) {
+    public String getBairro() {
+        return bairro;
+    }
+
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
+    }
+
+    public String getNumero() {
+        return numero;
+    }
+
+    public void setNumero(String numero) {
+        this.numero = numero;
+    }
+
+    public String getComplemento() {
+        return complemento;
+    }
+
+    public void setComplemento(String complemento) {
+        this.complemento = complemento;
+    }
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public String getCep() {
+        return cep;
+    }
+
+    public void setCep(String cep) {
+        this.cep = cep;
     }
 }
