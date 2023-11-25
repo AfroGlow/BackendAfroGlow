@@ -11,6 +11,7 @@ public class BackendAfroGlowApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(BackendAfroGlowApplication.class, args);
+	
 	}
 
 }
