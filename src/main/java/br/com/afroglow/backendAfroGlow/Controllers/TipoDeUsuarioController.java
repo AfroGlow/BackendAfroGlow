@@ -1,5 +1,6 @@
 package br.com.afroglow.backendAfroGlow.Controllers;
 
+import br.com.afroglow.backendAfroGlow.Models.TipoDeUsuario;
 import br.com.afroglow.backendAfroGlow.Service.TipoDeUsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -7,7 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/tipodeusuario")
+@RequestMapping("/tipodeusuario")
 public class TipoDeUsuarioController {
 
     private final TipoDeUsuarioService tipoDeUsuarioService;
@@ -18,26 +19,31 @@ public class TipoDeUsuarioController {
     }
 
     @PostMapping
-    public ResponseEntity<String> adicionarDescricao() {
-        tipoDeUsuarioService.adicionarDescricao();
-        return new ResponseEntity<>("Descrição adicionada com sucesso!", HttpStatus.CREATED);
+    public ResponseEntity<TipoDeUsuario> adicionarTipoDeUsuario(@RequestBody TipoDeUsuario tipoDeUsuario) {
+        tipoDeUsuarioService.adicionarTipoDeUsuario(tipoDeUsuario);
+        return new ResponseEntity<>(tipoDeUsuario, HttpStatus.CREATED);
     }
 
-    @GetMapping
-    public ResponseEntity<String> visualizarDescricao() {
-        tipoDeUsuarioService.visualizarDescricao();
-        return new ResponseEntity<>(tipoDeUsuarioService.getDescricao(), HttpStatus.OK);
+    @GetMapping("/visualizar/{descricao}")
+    public ResponseEntity<TipoDeUsuario> visualizarTipoDeUsuario(@PathVariable String descricao) {
+        TipoDeUsuario tipoDeUsuario = tipoDeUsuarioService.visualizarTipoDeUsuario(descricao);
+
+        if (tipoDeUsuario != null) {
+            return new ResponseEntity<>(tipoDeUsuario, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
     }
 
     @PutMapping
-    public ResponseEntity<String> atualizarDescricao() {
-        tipoDeUsuarioService.atualizarDescricao();
-        return new ResponseEntity<>("Descrição atualizada com sucesso!", HttpStatus.OK);
+    public ResponseEntity<TipoDeUsuario> atualizarTipoDeUsuario(@RequestBody TipoDeUsuario tipoDeUsuario) {
+        tipoDeUsuarioService.atualizarTipoDeUsuario(tipoDeUsuario);
+        return new ResponseEntity<>(tipoDeUsuario, HttpStatus.OK);
     }
 
-    @DeleteMapping
-    public ResponseEntity<String> deletarDescricao() {
-        tipoDeUsuarioService.deletarDescricao();
-        return new ResponseEntity<>("Descrição deletada com sucesso!", HttpStatus.OK);
-    }
+    // @DeleteMapping("/{descricao}")
+    // public ResponseEntity<String> deletarTipoDeUsuario(@PathVariable String descricao) {
+    //     tipoDeUsuarioService.deletarTipoDeUsuario(descricao);
+    //     return new ResponseEntity<>("Tipo de usuário deletado com sucesso!", HttpStatus.OK);
+    // }
 }
