@@ -2,16 +2,35 @@ package br.com.afroglow.backendAfroGlow.Controllers;
 
 public class BoxRequestDTO {
 
-    public int getTipoDeBox() {
-        return 0;
+    private String tipoDeBox;
+    private String descricao;
+    private double preco;
+
+    public String getTipoDeBox() {
+        return tipoDeBox;
+    }
+
+    public void setTipoDeBox(String tipoDeBox) {
+        this.tipoDeBox = tipoDeBox;
     }
 
     public String getDescricao() {
-        return null;
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
     public double getPreco() {
-        return 0;
+        return preco;
     }
 
+    public void setPreco(double preco) {
+        this.preco = preco;
+    }
+
+    public Object getQtdDeProdutos() {
+        return null;
+    }
 }
