@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import br.com.afroglow.backendAfroGlow.Models.Pagamento;
-import br.com.afroglow.backendAfroGlow.service.PagamentoService;
+import br.com.afroglow.backendAfroGlow.Service.PagamentoService;
 
 @RestController
 @RequestMapping(value = "pagamento")

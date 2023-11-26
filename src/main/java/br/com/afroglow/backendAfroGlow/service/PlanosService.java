@@ -1,4 +1,4 @@
-package br.com.afroglow.backendAfroGlow.service;
+package br.com.afroglow.backendAfroGlow.Service;
 
 
 // import java.util.List;

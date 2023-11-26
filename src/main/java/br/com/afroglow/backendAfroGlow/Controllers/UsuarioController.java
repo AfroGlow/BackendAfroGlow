@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.afroglow.backendAfroGlow.Models.Usuario;
-import br.com.afroglow.backendAfroGlow.service.UsuarioService;
+import br.com.afroglow.backendAfroGlow.Service.UsuarioService;
 
 @RestController
 @RequestMapping(value = "usuario")

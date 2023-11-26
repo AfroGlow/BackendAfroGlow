@@ -1,8 +1,8 @@
 package br.com.afroglow.backendAfroGlow.Models;
 
-import javax.persistence.Entity;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 
-@Entity 
+@EntityScan 
 public class Pagamento {
         public int idPagamento;
         public int idUsuario;
