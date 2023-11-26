@@ -1,52 +1,91 @@
-/* src/App.css */
-
-body {
-  background-color: #0e0e0e;
-  color: #fff;
-  font-family: 'Arial', sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-}
-
 .container {
-  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
-  font-size: 2rem;
-  margin-bottom: 20px;
+h2 {
+  color: #333;
 }
 
 ul {
-  list-style: none;
+  list-style-type: none;
   padding: 0;
 }
 
 li {
   margin: 10px 0;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.create-box,
+.edit-box {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 label {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
+  font-weight: bold;
 }
 
 input {
+  width: 100%;
   padding: 8px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
 button {
-  padding: 10px;
-  background-color: #4caf50;
-  color: #fff;
-  border: none;
   cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 19px;
+  text-align: center;
+  border: 1px;
+  border-style: solid;
+  border-radius: 50px;
+  border-color:#a984f8; 
+  color:  #e1e1e6;
+  background: #a984f8; 
+  text-transform: uppercase;
+  transition: all .3s ease;
+
+
+@media (min-width: 320px){
+  padding: 12px 24px;
+  justify-content: center;
+}
+
+:hover {
+  color: white;
+  background-color:#a984f8; ;
+  box-shadow: rgb(100 100 111 / 50%) 0 7px 29px 0;
+}
 }
 
 button:hover {
-  background-color: #45a049;
+  color: white;
+  background-color:#a984f8; ;
+  box-shadow: rgb(100 100 111 / 50%) 0 7px 29px 0;
+}
+
+p {
+  color: #4caf50;
+  font-weight: bold;
 }
