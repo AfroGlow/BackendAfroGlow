@@ -2,9 +2,10 @@ package br.com.afroglow.backendAfroGlow.Models;
 
 
 import java.util.Date;
-import javax.persistence.Entity;
 
-@Entity
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+
+@EntityScan
 public class Usuario {
     public int idUsuario;
     public int idDefinicaoDeCabelo;
