@@ -1,91 +1,117 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #041c3f; /* Cor de fundo azul escuro para simular a noite */
+  color: #fff;
+}
+
 .container {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #f4f4f4;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-h2 {
-  color: #333;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  margin: 10px 0;
+nav {
+  background-color: #01305c; /* Cor de fundo azul mais escuro para a barra de navegação */
+  color: white;
   padding: 10px;
-  background-color: #fff;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
-.create-box,
-.edit-box {
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+hr {
   margin-top: 20px;
-  padding: 15px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid #2c599d; /* Cor mais clara para a linha horizontal */
 }
 
-label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: bold;
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
-input {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
+input,
+select,
+button {
+  margin-bottom: 10px;
+  padding: 10px;
 }
 
 button {
   cursor: pointer;
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 19px;
-  text-align: center;
-  border: 1px;
-  border-style: solid;
-  border-radius: 50px;
-  border-color:#a984f8; 
-  color:  #e1e1e6;
-  background: #a984f8; 
-  text-transform: uppercase;
-  transition: all .3s ease;
-
-
-@media (min-width: 320px){
-  padding: 12px 24px;
-  justify-content: center;
-}
-
-:hover {
+  background-color: #2c599d; /* Cor mais clara para o botão */
   color: white;
-  background-color:#a984f8; ;
-  box-shadow: rgb(100 100 111 / 50%) 0 7px 29px 0;
-}
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  transition: background-color 0.3s ease; /* Adiciona uma transição suave para a mudança de cor */
 }
 
 button:hover {
-  color: white;
-  background-color:#a984f8; ;
-  box-shadow: rgb(100 100 111 / 50%) 0 7px 29px 0;
+  background-color: #01305c; /* Cor mais escura ao passar o mouse */
 }
 
-p {
-  color: #4caf50;
-  font-weight: bold;
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  background-color: #001628; /* Cor de fundo mais escura para cada item da lista */
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.1); /* Adiciona uma sombra suave */
+}
+
+h2 {
+  color: #2c599d; /* Cor mais clara para o cabeçalho */
+}
+
+/* Adiciona estrelas animadas para simular uma noite estrelada */
+.starry-night {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.starry-night:before {
+  content: ' ';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2px;
+  height: 2px;
+  background-color: #fff;
+  box-shadow: 1000px 0 0 #fff, -1000px 0 0 #fff, 0 1000px 0 #fff, 0 -1000px 0 #fff, 500px 500px 0 #fff, -500px -500px 0 #fff, 500px -500px 0 #fff, -500px 500px 0 #fff;
+  animation: stars 100s infinite linear;
+}
+
+@keyframes stars {
+  to {
+    transform: rotate(360deg);
+  }
 }

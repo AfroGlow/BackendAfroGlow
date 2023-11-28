@@ -1,4 +1,4 @@
-package br.com.afroglow.backendAfroGlow.Controllers;
+package br.com.afroglow.backendAfroGlow.DTO;
 
 public class BoxRequestDTO {
 
