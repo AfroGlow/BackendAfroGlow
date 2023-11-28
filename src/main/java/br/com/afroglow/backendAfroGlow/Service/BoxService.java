@@ -3,7 +3,7 @@ package br.com.afroglow.backendAfroGlow.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.afroglow.backendAfroGlow.Controllers.BoxRequestDTO;
+import br.com.afroglow.backendAfroGlow.DTO.BoxRequestDTO;
 import br.com.afroglow.backendAfroGlow.Models.Box;
 import br.com.afroglow.backendAfroGlow.Repository.BoxRepository;
 

@@ -65,7 +65,7 @@
 // }
 package br.com.afroglow.backendAfroGlow.Models;
 
-import br.com.afroglow.backendAfroGlow.Controllers.BoxRequestDTO;
+import br.com.afroglow.backendAfroGlow.DTO.BoxRequestDTO;
 import jakarta.persistence.*;
 
 @Entity
