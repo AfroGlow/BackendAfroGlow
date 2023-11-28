@@ -1,7 +1,5 @@
 # Backend AfroGlow
 
-
-
 Motivação do Projeto:
 Este projeto foi concebido com o intuito de criar uma solução robusta e eficiente para atender às demandas crescentes no âmbito de sistemas backend. A escolha das tecnologias Java, MySQL e Spring Boot foi motivada pela reputação de confiabilidade, escalabilidade e facilidade de desenvolvimento que essas tecnologias proporcionam.
 
@@ -31,15 +29,8 @@ Aqui você disserta sobre a arquitetura que você usou no projeto, que vai desde
 
 Exemplo de texto (explicando a arquitetura do curto.io):
 
-**Next.js**
-
-*Usei Next.js para o frontend devido sua tecnologia server-side, grande parte do projeto precisaria ser gerada no servidor e isso traria grandes vantagens para a aplicação como um todo. Isso, acrescido com a curva de aprendizado baixa por eu já fazer uso dela, me fez tomar a decisão de usá-lo nesse projeto*
-
-**Redis**
-
-*Devido sua característica de KVS (Key Value Store), funciona como uma luva para armazenar os tokens dos links curtos para que possamos posteriormente "trocar" por links longos na aplicação, garantindo rapidez e escala na hora de redirecionarmos os usuários, evitando com que a minha API principal seja bombardeada com tanto tráfego no redirecionamento.*
-
-*Para o redis, estou utilizando Upstash, uma solução que provê o redis como uma plataforma serverless, que vai ser muito legal para o momento da minha aplicação, que vai escalar no decorrer do tempo, além de oferecer um preço muito bacana.*
+**Java**
+*O java foi a linguagem escolhida para desenvolver o backend da nossa plataforma*
 
 **Spring Boot**
 
