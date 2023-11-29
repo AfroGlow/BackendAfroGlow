@@ -1,52 +1,63 @@
 package br.com.afroglow.backendAfroGlow.Service;
 
-import java.sql.Date;
+// import java.sql.Date;
+import java.util.Optional;
+import java.util.List;
 
+import org.springframework.stereotype.Service;
+
+import br.com.afroglow.backendAfroGlow.Models.PlanoUsuario;
 import br.com.afroglow.backendAfroGlow.Models.Usuario;
 
+import br.com.afroglow.backendAfroGlow.Repository.UsuarioRepository;
+
+
+@Service
 public class UsuarioService {
-    public Usuario buscaUsuario(Integer usuarioId){
-        Usuario usuario = new Usuario();
-        usuario.idUsuario = 7;
-        usuario.idDefinicaoDeCabelo = 7;
-        usuario.idTipoDeUsuario = 7;
-        usuario.nomeCompleto = "Rato";
-        usuario.nomeSocial = "Ricardo";
-        usuario.dataDeNascimento = new Date(20030120);
-        usuario.genero = "não-binari";
-        usuario.email = "<ricardo.sao@hotmail.com>";
-        usuario.senha = "<picoloVerde>";
-        usuario.telefone = "554888888";
-        usuario.cpf = "50651635824";
-        usuario.status = "não aceito na sociedade";
+
+    private final UsuarioRepository usuarioRepository;
+
+
+    //Construtor da classe
+    public UsuarioService(UsuarioRepository usuarioRepository) {
+        this.usuarioRepository = usuarioRepository;
+    }
+    public Optional<Usuario> buscarUsuario(Integer usuarioId){
+        Optional<Usuario> usuario = usuarioRepository.findById(usuarioId);
+
         return usuario;
     }
 
-//     public List<Usuario>(buscarUsuarios usuarios) {
-    
-// }
+    public List<Usuario> retornarListaDeUsuarios() {
+        return usuarioRepository.findAll();
+}
 
     public void adicionarUsuario(Usuario usuario){
-        
+        usuarioRepository.save(usuario);
     }
 
     public void deletarUsuario(Integer usuarioId){
-
+        usuarioRepository.deleteById(usuarioId);
     }
 
     public void atualizarUsuario(Usuario usuarioId){
-
+        usuarioRepository.save(usuarioId);
     }
 
-    public void adicionarCrianca(Integer criancaId){
+    // public void adicionarCrianca(Integer criancaId){
+    //     criancaRepository.save(criancaId);
+    // }
 
-    }
 
-    public void adicionarPlano(Integer planoId){
 
-    }
-
-    public void escolherUsuario(Integer TipoDeUsuarioId){
+    public void escolherUsuario(Integer tipoDeUsuarioId, Integer usuarioId){
+        Optional<Usuario> usuarioObjeto = buscarUsuario(usuarioId);
+        if(usuarioObjeto.isPresent()) {
+            usuarioObjeto.get().idTipoDeUsuario = tipoDeUsuarioId;
+            Usuario usuarioAtualizado = new Usuario();
+            // usuarioAtualizado.idUsuario = usuarioObjeto.get().idUsuario;
+            usuarioAtualizado = usuarioObjeto.stream().findFirst().orElse(null);
+            usuarioRepository.save(usuarioAtualizado);
+        } 
 }
-
 }

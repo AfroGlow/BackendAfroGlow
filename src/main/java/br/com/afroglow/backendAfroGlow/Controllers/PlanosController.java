@@ -1,5 +1,8 @@
 package br.com.afroglow.backendAfroGlow.Controllers;
 
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,13 +12,19 @@ import br.com.afroglow.backendAfroGlow.Models.Planos;
 import br.com.afroglow.backendAfroGlow.Service.PlanosService;
 
 @RestController
-@RequestMapping(value = "planos")
+@RequestMapping("/planos")
 public class PlanosController {
-    
-    PlanosService planosService = new PlanosService();
+    // Propriedade Service
+    @Autowired
+    private final PlanosService planosService;
+
+    // Criando Construtor
+    public PlanosController(PlanosService planosService) {
+        this.planosService = planosService;
+    }
 
     @GetMapping(value = "/{planosId}")
-    public Planos getPlanos(@PathVariable Integer planosId) {
+    public Optional<Planos> getPlanos(@PathVariable Integer planosId) {
         return planosService.buscaPlanos(planosId);
-}
+    }
 }
