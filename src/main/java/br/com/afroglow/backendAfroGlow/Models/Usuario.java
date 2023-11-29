@@ -2,7 +2,6 @@ package br.com.afroglow.backendAfroGlow.Models;
 
 
 import java.util.Date;
-
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 @EntityScan
@@ -20,3 +19,4 @@ public class Usuario {
     public String cpf;
     public String status;
 }
+
