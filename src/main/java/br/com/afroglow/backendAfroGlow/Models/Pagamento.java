@@ -1,9 +1,12 @@
 package br.com.afroglow.backendAfroGlow.Models;
 
-import org.springframework.boot.autoconfigure.domain.EntityScan;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
-@EntityScan 
+@Entity
 public class Pagamento {
+
+        @Id
         public int idPagamento;
         public int idUsuario;
         public String status;
