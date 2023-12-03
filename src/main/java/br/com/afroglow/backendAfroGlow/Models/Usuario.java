@@ -1,10 +1,10 @@
 package br.com.afroglow.backendAfroGlow.Models;
 
-
+import java.sql.Date;
 import java.util.Date;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+
 
 @Entity
 public class Usuario {
@@ -23,4 +23,3 @@ public class Usuario {
     public String cpf;
     public String status;
 }
-
