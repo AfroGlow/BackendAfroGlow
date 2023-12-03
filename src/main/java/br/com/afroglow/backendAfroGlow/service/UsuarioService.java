@@ -3,12 +3,8 @@ package br.com.afroglow.backendAfroGlow.Service;
 // import java.sql.Date;
 import java.util.Optional;
 import java.util.List;
-
 import org.springframework.stereotype.Service;
-
-import br.com.afroglow.backendAfroGlow.Models.PlanoUsuario;
 import br.com.afroglow.backendAfroGlow.Models.Usuario;
-
 import br.com.afroglow.backendAfroGlow.Repository.UsuarioRepository;
 
 
