@@ -35,11 +35,11 @@ public class PlanosService {
         return planosRepository.findAll();
     }
 
-    public void adicionarTipoDePlano(Planos planos) {
+    public void adicionarPlano(Planos planos) {
         planosRepository.save(planos);
     }
 
-    public void deletarTipoDePlano(Integer planosId) {
+    public void deletarPlano(Integer planosId) {
         planosRepository.deleteById(planosId);
     }
 
