@@ -1,9 +1,12 @@
 package br.com.afroglow.backendAfroGlow.Models;
 
-import org.springframework.boot.autoconfigure.domain.EntityScan;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
-@EntityScan
+@Entity
 public class Planos {
+
+        @Id
         public int idPlano;
         public String nomeDoPlano;
         public Float preco;
