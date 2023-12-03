@@ -9,9 +9,7 @@ public class TipoDeCabelo {
     private int idDefinicaoDoCabelo;
     private int idUsuario;
 
-    // Construtores, getters e setters aqui...
-
-    // Exemplo de construtor
+   
     public TipoDeCabelo(int idTipoDeCabelo, String tipoDeCabelo, String curvaturaDoCabelo,
                         String danoDoCabelo, boolean transicaoCapilar, int idDefinicaoDoCabelo,
                         int idUsuario) {
@@ -31,5 +29,5 @@ public class TipoDeCabelo {
     public void setCurvaturaDoCabelo(String novaCurvatura) {
     }
 
-    // Getters e setters...
+
 }

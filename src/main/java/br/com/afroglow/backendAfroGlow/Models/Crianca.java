@@ -35,8 +35,13 @@ public class Crianca {
     @Column(name = "status", nullable = false, length = 25)
     private String status;
 
-    // Construtores, getters e setters
 
+
+
+
+
+
+    
     public Crianca() {
     }
 

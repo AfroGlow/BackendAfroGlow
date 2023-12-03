@@ -30,5 +30,5 @@ public class AdminService {
         adminRepository.save(admin);
     }
 
-    // Se necessário, você pode adicionar métodos para outras operações, como exclusão.
+  
 }

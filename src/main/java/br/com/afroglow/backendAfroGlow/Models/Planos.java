@@ -1,14 +1,20 @@
 package br.com.afroglow.backendAfroGlow.Models;
 
-import org.springframework.boot.autoconfigure.domain.EntityScan;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
-@EntityScan
+@Entity
 public class Planos {
-        public int idPlano;
-        public String nomeDoPlano;
-        public Float preco;
-        public String duracao;
-        public String descricao;
-    }
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int idPlano;
 
+    private String nomeDoPlano;
+    private Float preco;
+    private String duracao;
+    private String descricao;
 
+    // getters and setters
+}
