@@ -51,7 +51,7 @@ const EditCrianca = ({ id, onCancel, onUpdate }) => {
     try {
      
 
-      await axios.put(`http://localhost:8080/api/crianca/${id}`, crianca);
+      await axios.put(`ec2-35-175-211-209.compute-1.amazonaws.com/api/crianca/${id}`, crianca);
       setSuccessMessage('Criança atualizada com sucesso');
       onUpdate();
     } catch (error) {
