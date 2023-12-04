@@ -11,10 +11,10 @@ public class PlanoUsuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idPlanoUsuario;
+   
 
 
-        @Id
+        
         public int idPlanoUsuario; 
         public int idUsuario;
         public int idPlano;
@@ -23,4 +23,3 @@ public class PlanoUsuario {
 
 
 
-}

@@ -85,16 +85,16 @@ public class Box {
     @Column(nullable = false)
     private Integer qtdDeProdutos;
 
-    // Construtor padrão necessário para JPA
+
     public Box() {
     }
 
-    // Construtor que aceita um objeto BoxRequestDTO
+  
     public Box(BoxRequestDTO boxRequestDTO) {
-        // Implemente a lógica necessária para inicializar os campos com base no BoxRequestDTO
+   
     }
 
-    // Getters e setters
+  
 
     public Long getIdBox() {
         return idBox;
