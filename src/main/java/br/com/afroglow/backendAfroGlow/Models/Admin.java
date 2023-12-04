@@ -1,6 +1,9 @@
 package br.com.afroglow.backendAfroGlow.Models;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,16 +13,19 @@ import java.sql.SQLException;
 @Entity
 public class Admin {
 
-    @Id
-    private Integer idAdmin;
+   @Id
+@GeneratedValue(strategy = GenerationType.IDENTITY)
+@Column(name = "id_admin")
+private Long idAdmin;
     private String nomeAdmin;
     private String senha;
     private String dataDeNascimento;
     private String email;
 
-    // Construtor que inicializa os atributos com valores padrão
+    // Construtor sem inicialização manual do idAdmin
     public Admin() {
-        this.idAdmin = 0;
+        // Os demais atributos serão inicializados com valores padrão
+       
         this.nomeAdmin = "";
         this.senha = "";
         this.dataDeNascimento = "";
@@ -29,15 +35,22 @@ public class Admin {
     // Método para adicionar um administrador no banco de dados
     public void adicionarAdmin() {
         try (Connection conexao = Conexao.obterConexao()) {
-            String sql = "INSERT INTO administrador (idAdmin, nomeAdmin, senha, dataDeNascimento, email) VALUES (?, ?, ?, ?, ?)";
-            try (PreparedStatement statement = conexao.prepareStatement(sql)) {
-                statement.setInt(1, idAdmin);
-                statement.setString(2, nomeAdmin);
-                statement.setString(3, senha);
-                statement.setString(4, dataDeNascimento);
-                statement.setString(5, email);
+            String sql = "INSERT INTO administrador (nomeAdmin, senha, dataDeNascimento, email) VALUES (?, ?, ?, ?)";
+            try (PreparedStatement statement = conexao.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS)) {
+                statement.setString(1, nomeAdmin);
+                statement.setString(2, senha);
+                statement.setString(3, dataDeNascimento);
+                statement.setString(4, email);
                 statement.executeUpdate();
-                System.out.println("Admin adicionado com sucesso!");
+
+                // Obtendo o idAdmin gerado automaticamente
+                ResultSet generatedKeys = statement.getGeneratedKeys();
+                if (generatedKeys.next()) {
+                    this.idAdmin = (long) generatedKeys.getInt(1);
+                    System.out.println("Admin adicionado com sucesso! ID: " + idAdmin);
+                } else {
+                    System.out.println("Erro ao obter o ID gerado para o Admin.");
+                }
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -49,7 +62,7 @@ public class Admin {
         try (Connection conexao = Conexao.obterConexao()) {
             String sql = "SELECT nomeAdmin, senha, dataDeNascimento, email FROM administrador WHERE idAdmin=?";
             try (PreparedStatement statement = conexao.prepareStatement(sql)) {
-                statement.setInt(1, idAdmin);
+                statement.setFloat(1, idAdmin);
                 ResultSet resultSet = statement.executeQuery();
                 if (resultSet.next()) {
                     this.nomeAdmin = resultSet.getString("nomeAdmin");
@@ -74,7 +87,7 @@ public class Admin {
                 statement.setString(2, senha);
                 statement.setString(3, dataDeNascimento);
                 statement.setString(4, email);
-                statement.setInt(5, idAdmin);
+                statement.setFloat(5, idAdmin);
                 statement.executeUpdate();
                 System.out.println("Admin atualizado com sucesso!");
             }
@@ -83,11 +96,11 @@ public class Admin {
         }
     }
 
-    public Integer getIdAdmin() {
+    public Long getIdAdmin() {
         return idAdmin;
     }
 
-    public void setIdAdmin(Integer idAdmin) {
+    public void setIdAdmin(Long idAdmin) {
         this.idAdmin = idAdmin;
     }
 
