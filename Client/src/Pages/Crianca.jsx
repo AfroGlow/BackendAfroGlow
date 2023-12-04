@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Crianca.css';
 
-const API_BASE_URL = 'http://localhost:8080/api/criancas';
+const API_BASE_URL = 'ec2-35-175-211-209.compute-1.amazonaws.com:8080/api/criancas';
 
 const Crianca = () => {
   const [criancas, setCriancas] = useState([]);

@@ -12,13 +12,13 @@ const BoxList = () => {
     }, []);
   
     const fetchBoxes = () => {
-      axios.get('http://localhost:8080/api')
+      axios.get('ec2-35-175-211-209.compute-1.amazonaws.com:8080/api')
         .then(response => setBoxes(response.data))
         .catch(error => console.error('Error fetching data:', error));
     };
   
     const createBox = () => {
-      axios.post('http://localhost:8080/api', newBox)
+      axios.post('ec2-35-175-211-209.compute-1.amazonaws.com:8080/api', newBox)
         .then(() => {
           fetchBoxes();
           setNewBox({ tipoDeBox: '', preco: 0, qtdDeProdutos: 0 });
@@ -28,7 +28,7 @@ const BoxList = () => {
     };
   
     const updateBox = () => {
-      axios.put(`http://localhost:8080/api/${editBox.id}`, editBox)
+      axios.put(`ec2-35-175-211-209.compute-1.amazonaws.com/api/${editBox.id}`, editBox)
         .then(() => {
           fetchBoxes();
           setEditBox({ id: null, tipoDeBox: '', preco: 0, qtdDeProdutos: 0 });
@@ -38,7 +38,7 @@ const BoxList = () => {
     };
   
     const deleteBox = (id) => {
-      axios.delete(`http://localhost:8080/api/${id}`)
+      axios.delete(`ec2-35-175-211-209.compute-1.amazonaws.com/api/${id}`)
         .then(() => {
           fetchBoxes();
           setMessage('Caixa excluída com sucesso!');
