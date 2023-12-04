@@ -39,10 +39,10 @@ public class UsuarioController {
         return new ResponseEntity<>(usuario, HttpStatus.CREATED);
     }
 
-    @PutMapping 
-    public ResponseEntity<Usuario> atualizarUsuario(@RequestBody Usuario usuario) {
-        usuarioService.atualizarUsuario(usuario);
-        return new ResponseEntity<>(usuario, HttpStatus.OK);
+    @PutMapping("/{id}")
+    public ResponseEntity<String> atualizarUsuario(@RequestBody Integer usuarioId) {
+        usuarioService.atualizarUsuario(usuarioId);
+        return new ResponseEntity<>("Usuário atualizado com sucesso!", HttpStatus.OK);
     }
 
     @DeleteMapping("/{id}")

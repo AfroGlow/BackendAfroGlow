@@ -36,7 +36,7 @@ public class UsuarioService {
         usuarioRepository.deleteById(usuarioId);
     }
 
-    public void atualizarUsuario(Usuario usuarioId){
+    public void atualizarUsuario(Integer usuarioId){
         usuarioRepository.save(usuarioId);
     }
 

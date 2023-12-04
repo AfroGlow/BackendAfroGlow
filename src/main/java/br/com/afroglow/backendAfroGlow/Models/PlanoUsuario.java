@@ -11,9 +11,6 @@ public class PlanoUsuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-   
-
-
         
         public int idPlanoUsuario; 
         public int idUsuario;
