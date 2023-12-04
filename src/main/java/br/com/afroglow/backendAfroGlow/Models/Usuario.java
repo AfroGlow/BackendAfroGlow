@@ -2,6 +2,8 @@ package br.com.afroglow.backendAfroGlow.Models;
 
 import java.sql.Date;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 
@@ -9,6 +11,7 @@ import jakarta.persistence.Id;
 public class Usuario {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int idUsuario;
     public int idDefinicaoDeCabelo;
     public int idTipoDeUsuario;

@@ -12,10 +12,6 @@ public class Planos {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
-
-
-        
         public int idPlano;
         public String nomeDoPlano;
         public Float preco;
