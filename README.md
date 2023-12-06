@@ -137,7 +137,8 @@ Agradecemos a contribuição valiosa de cada membro da equipe!
 
 Siga a AfroGlow nas redes sociais para ficar por dentro das últimas novidades e atualizações:
 
-- Instagram: [@afroglow_](https://www.instagram.com/afroglow_/)
+- Beacons: [Beacons AfroGlow](https://beacons.ai/afroglow_)
+- Instagram: [@afroglow_](https://www.instagram.com/afroglow__/)
 
 <hr>
 
