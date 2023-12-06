@@ -56,6 +56,22 @@ O Diagrama de Classe é uma ferramenta fundamental na modelagem de sistemas orie
 
 O Diagrama MySQL, ou Modelo EER, é uma representação visual das tabelas em um banco de dados e das relações entre essas tabelas. Ele geralmente é gerado usando ferramentas de design de banco de dados, como o MySQL Workbench. Esses diagramas oferecem uma visão visual dos diferentes componentes do banco de dados, incluindo tabelas, colunas e suas relações.
 
+## AWS
+
+Todo o nosso banco de dados e backend estão armazenados na AWS (Amazon Web Services), uma plataforma de computação em nuvem líder no mercado. A escolha pela AWS foi motivada pela sua confiabilidade, escalabilidade e ampla gama de serviços que oferece para suportar aplicações web e bancos de dados.
+
+**RDS**
+Amazon RDS (Relational Database Service):
+Utilizado para hospedar bancos de dados relacionais, como MySQL, PostgreSQL, entre outros.
+
+![Imagem do WhatsApp de 2023-12-06 à(s) 13 59 50_cd571562](https://github.com/AfroGlow/BackendAfroGlow/assets/99924057/6e09b932-6ca0-4033-86c1-b98177403610)
+
+**EC2**
+Amazon EC2 (Elastic Compute Cloud):
+Oferece servidores virtuais escaláveis para hospedar aplicativos e serviços.
+
+![Imagem do WhatsApp de 2023-12-06 à(s) 13 59 50_1097c5d0](https://github.com/AfroGlow/BackendAfroGlow/assets/99924057/311393a7-0ce5-4b2f-976d-75ffb68d40f6)
+
 <hr>
 
 ## Tecnologias Utilizadas
