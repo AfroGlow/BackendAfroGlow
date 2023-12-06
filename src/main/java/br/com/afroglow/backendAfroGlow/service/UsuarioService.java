@@ -36,15 +36,9 @@ public class UsuarioService {
         usuarioRepository.deleteById(usuarioId);
     }
 
-    public void atualizarUsuario(Integer usuarioId){
-        usuarioRepository.save(usuarioId);
+    public void atualizarUsuario(Usuario usuario){
+        usuarioRepository.save(usuario);
     }
-
-    // public void adicionarCrianca(Integer criancaId){
-    //     criancaRepository.save(criancaId);
-    // }
-
-
 
     public void escolherUsuario(Integer tipoDeUsuarioId, Integer usuarioId){
         Optional<Usuario> usuarioObjeto = buscarUsuario(usuarioId);
