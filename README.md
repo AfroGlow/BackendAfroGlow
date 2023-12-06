@@ -62,11 +62,15 @@ O Diagrama de Classe é uma ferramenta fundamental na modelagem de sistemas orie
 **SQL:**
 *Utilizamos SQL para armazenar nossos dados. Por se tratar de uma linguagem de banco de dados relacional, preferimos por ser mais organizado e eficiente no armazenamento de dados.*
 
+<hr>
+
 ## Instruções de Execução
 
 **Instrução para Execução do Projeto:**
 Para ter acesso à plataforma completa, acesse o GitHub: [AfroGlow](https://github.com/AfroGlow).
 Lá você terá acesso à plataforma já funcional e como executá-la.
+
+<hr>
 
 ## Contribua com o Projeto
 
@@ -74,9 +78,13 @@ Para contribuir com o Projeto, entre em contato com a nossa equipe!
 
 Envie um e-mail para: [contatoafroglow@gmail.com](mailto:contatoafroglow@gmail.com)
 
+<hr>
+
 ## Changelog
 
 A partir de agora, registramos todas as atualizações significativas e novas funcionalidades do sistema no changelog. Este documento representa um histórico completo de todas as versões que o sistema já teve, incluindo as principais características implementadas ao longo do tempo. Este registro oferece transparência, demonstra comprometimento com a qualidade e fornece um guia útil para colaboradores que desejam entender o desenvolvimento do projeto.
+
+<hr>
 
 ## Equipe de Desenvolvimento
 
@@ -92,6 +100,8 @@ Todo o processo de desenvolvimento foi auxiliado por mentores como:
 - [Lais Carvalho](https://github.com/Lais205)
 
 Agradecemos a contribuição valiosa de cada membro da equipe!
+
+<hr>
 
 ## Siga nas Redes Sociais
 
