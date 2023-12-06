@@ -25,9 +25,17 @@ Links para acessar mais facilmente cada um dos tópicos do README.
 
 Para arquitetar o projeto, utilizamos UML para definir nossos objetivos e metas. Adotamos o padrão MVC (Model, View e Controller) como estrutura de pastas para o código do projeto.
 
+- [Diagrama De Caso De Uso](#Diagrama-de-caso-de-uso)
+- [Diagrama Conceitual](#Diagrama-Conceitual)
+- [Diagrama De Classe](#Diagrama-De-Classe)
+
 Abaixo estão os diagramas elaborados no UML:
 
-*(Insira os diagramas aqui, se possível)*
+## Diagrama de caso de uso
+
+## Diagrama Conceitual
+
+## Diagrama De Classe
 
 ## Tecnologias Utilizadas
 
