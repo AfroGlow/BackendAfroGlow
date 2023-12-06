@@ -37,13 +37,13 @@ Abaixo estão os diagramas elaborados no UML:
 
 ![image](https://github.com/AfroGlow/BackendAfroGlow/assets/111551364/451e3da9-7b74-4467-a73a-0db4b3040d04)
 
-##
+O Diagrama Conceitual serve para fornecer uma representação visual das principais entidades e relacionamentos fundamentais em um sistema ou projeto. Ele ajuda a transmitir conceitos e ideias abstratas de maneira mais clara e compreensível.
 
 ## Diagrama De Classe
 
 ![image](https://github.com/AfroGlow/BackendAfroGlow/assets/111551364/9730a8bb-d5ef-4440-8bfc-8287edaf989e)
 
-##
+O Diagrama de Classe é uma ferramenta fundamental na modelagem de sistemas orientados a objetos e serve para representar a estrutura estática de um sistema, mostrando as classes, seus atributos, métodos e os relacionamentos entre as classes. 
 
 ## Tecnologias Utilizadas
 
