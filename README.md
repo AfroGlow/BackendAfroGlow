@@ -1,12 +1,12 @@
 ## Backend AfroGlow
 
-*Motivação do Projeto:*
+**Motivação do Projeto:**
 Este projeto foi concebido com o intuito de criar uma solução robusta e eficiente para atender às demandas crescentes no âmbito de sistemas backend. A escolha das tecnologias Java, MySQL e Spring Boot foi motivada pela reputação de confiabilidade, escalabilidade e facilidade de desenvolvimento que essas tecnologias proporcionam.
 
-*Desafios Enfrentados:*
+**Desafios Enfrentados:**
 Ao implementar este projeto, enfrentamos diversos desafios que contribuíram significativamente para o aprimoramento das habilidades técnicas e aprofundamento do conhecimento na área. A integração entre Java, MySQL e Spring Boot, embora poderosa, demandou uma compreensão aprofundada para garantir uma arquitetura eficiente e uma manipulação adequada dos dados. O gerenciamento de concorrência, segurança da aplicação e otimização de consultas SQL foram desafios específicos que demandaram uma abordagem cuidadosa e soluções inovadoras.
 
-*Aprendizados Obtidos:*
+**Aprendizados Obtidos:**
 Este projeto representou uma jornada valiosa de aprendizado. Aprofundamos nossos conhecimentos em programação Java, aprimoramos as habilidades de modelagem de banco de dados com MySQL e exploramos as funcionalidades avançadas do framework Spring Boot. Além disso, a experiência prática de lidar com desafios do mundo real proporcionou insights valiosos sobre boas práticas de desenvolvimento, arquitetura de software e estratégias eficazes para a solução de problemas complexos.
 
 <hr>
