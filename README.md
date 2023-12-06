@@ -33,6 +33,7 @@ Para arquitetar o projeto, utilizamos UML para definir nossos objetivos e metas.
 - [Diagrama Conceitual](#Diagrama-Conceitual)
 - [Diagrama De Classe](#Diagrama-De-Classe)
 - [Diagrama MySQL](#Diagrama-MySQL)
+- [AWS - Amazon Web Services](#AWS)
 
 Abaixo estão os diagramas elaborados no UML:
 
