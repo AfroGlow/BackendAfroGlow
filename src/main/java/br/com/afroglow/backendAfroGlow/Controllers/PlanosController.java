@@ -29,8 +29,8 @@ public class PlanosController {
         this.planosService = planosService;
     }
 
-    @GetMapping(value = "/{planosId}")
-    public Optional<Planos> getPlanos(@PathVariable Integer planoId) {
+    @GetMapping(value = "/{planoId}")
+    public Optional<Planos> getPlano(@PathVariable Integer planoId) {
         return planosService.buscaPlanos(planoId);
     }
 
@@ -41,13 +41,13 @@ public class PlanosController {
     }
 
     @PutMapping 
-    public ResponseEntity<Planos> atualizarPlano(@RequestBody Planos planos) {
+    public ResponseEntity<String> atualizarPlano(@RequestBody Planos planos, String body) {
         planosService.atualizarPlanos(planos);
-        return new ResponseEntity<>(planos, HttpStatus.OK);
+        return new ResponseEntity<>("Plano atualizado com sucesso!", HttpStatus.OK);
     }
     
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/{planoId}")
     public ResponseEntity<String> deletarPlano(@PathVariable Integer planoId) {
         planosService.deletarPlano(planoId);
         return new ResponseEntity<>("Plano deletado com sucesso!", HttpStatus.OK);

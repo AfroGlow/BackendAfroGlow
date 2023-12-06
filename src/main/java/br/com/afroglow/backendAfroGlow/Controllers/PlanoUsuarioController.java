@@ -40,16 +40,14 @@ public class PlanoUsuarioController {
     }
 
     @PutMapping
-    public ResponseEntity<String> atualizarPlanoUsuario(@PathVariable PlanoUsuario planoUsuario) {
+    public ResponseEntity<String> atualizarPlanoUsuario(@RequestBody PlanoUsuario planoUsuario) {
         planoUsuarioService.atualizarPlanoUsuario(planoUsuario);
         return new ResponseEntity<>("Plano atualizado com sucesso!", HttpStatus.OK);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/{planoUsuarioId}")
     public ResponseEntity<String> deletarPlanoUsuario(@PathVariable Integer planoUsuarioId) {
         planoUsuarioService.deletarPlanoUsuario(planoUsuarioId);
         return new ResponseEntity<>("Plano deletado com sucesso!", HttpStatus.OK);
     }
-
-    
 }

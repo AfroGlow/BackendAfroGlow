@@ -23,11 +23,6 @@ public class PlanosService {
 
     public Optional<Planos> buscaPlanos(Integer planosId) {
         Optional<Planos> planos = planosRepository.findById(planosId);
-        // planos.idPlano = 3;
-        // planos.nomeDoPlano = "Rato";
-        // // planoUsuario.preco = 9.99(ARRUMAR);
-        // planos.duracao = "3 meses";
-        // planos.descricao = "pipipipopopo";
         return planos;
     }
 

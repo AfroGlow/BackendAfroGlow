@@ -17,10 +17,8 @@ public class PagamentoService {
         this.pagamentoRepository = pagamentoRepository;
     }
     public Optional<Pagamento> buscaPagamento(Integer pagamentoId){
-        Optional<Pagamento> pagamento = pagamentoRepository.findById(pagamentoId); // Criando um objeto 
-        // pagamento.idPagamento = 2;
-        // pagamento.idUsuario = 3;
-        // pagamento.status = "Rato de esgoto";
+    // Criando um objeto 
+        Optional<Pagamento> pagamento = pagamentoRepository.findById(pagamentoId); 
         return pagamento;
     }
 
