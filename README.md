@@ -52,6 +52,8 @@ O Diagrama de Classe é uma ferramenta fundamental na modelagem de sistemas orie
 
 ## Diagrama MySQL - Modelo EER
 
+![Imagem do WhatsApp de 2023-12-06 à(s) 00 09 10_f5df7509](https://github.com/AfroGlow/BackendAfroGlow/assets/99924057/131b863f-63b8-42b6-a3b6-3b1a6e9b0a76)
+
 O Diagrama MySQL, ou Modelo EER, é uma representação visual das tabelas em um banco de dados e das relações entre essas tabelas. Ele geralmente é gerado usando ferramentas de design de banco de dados, como o MySQL Workbench. Esses diagramas oferecem uma visão visual dos diferentes componentes do banco de dados, incluindo tabelas, colunas e suas relações.
 
 <hr>
