@@ -17,9 +17,9 @@ Links para acessar mais facilmente cada um dos tópicos do README.
 - [Tecnologias Utilizadas](#tecnologias-utilizadas)
 - [Instruções de Execução](#instruções-de-execução)
 - [Contribua com o Projeto](#contribua-com-o-projeto)
-- [Changelog](#Changelog).
-- [Desenvolvedores](#Equipe).
-- [Redes Sociais](#Siga)
+- [Changelog](#Changelog)
+- [Desenvolvedores](#Equipe-de-Desenvolvimento)
+- [Redes Sociais](#Siga-nas-Redes-Sociais)
 
 ## Arquitetura
 
