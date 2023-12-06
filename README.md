@@ -83,8 +83,14 @@ Oferece servidores virtuais escaláveis para hospedar aplicativos e serviços.
 **Spring Boot:**
 *É o backend principal da minha aplicação, feita em Java Spring Boot somente pelo motivo de eu já conhecer a linguagem e ter experiência com o ecossistema Java, partir para esse lado me deu muita produtividade na hora de codificar os endpoints da API.*
 
+**MySQL**
+*No início, utilizávamos o MySQL; no entanto, preferimos migrar para o PostgreSQL.*
+
 **SQL:**
 *Utilizamos SQL para armazenar nossos dados. Por se tratar de uma linguagem de banco de dados relacional, preferimos por ser mais organizado e eficiente no armazenamento de dados.*
+
+**PostgreSQL**
+*Preferimos utilizar o PostgreSQL, pois é um sistema de gerenciamento de banco de dados relacional de código aberto e altamente poderoso.*
 
 <hr>
 
@@ -135,10 +141,12 @@ Siga a AfroGlow nas redes sociais para ficar por dentro das últimas novidades e
 
 <hr>
 
-[![MySQL](https://img.shields.io/badge/mysql-%23000.svg?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)
-[![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white)](https://spring.io/)
-[![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)](https://www.java.com/)
-[![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)](https://www.postman.com/)
-[![Trello](https://img.shields.io/badge/Trello-%23026AA7.svg?style=for-the-badge&logo=Trello&logoColor=white)](https://trello.com/)
-[![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/)
+[![MySQL](https://img.shields.io/badge/mysql-%23000.svg?style=for-the-badge&logo=mysql&logoColor=white)]()
+[![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white)]()
+[![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)]()
+[![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)]()
+[![Trello](https://img.shields.io/badge/Trello-%23026AA7.svg?style=for-the-badge&logo=Trello&logoColor=white)]()
+[![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)]()
+![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white)
+![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
 
