@@ -32,6 +32,7 @@ Para arquitetar o projeto, utilizamos UML para definir nossos objetivos e metas.
 - [Diagrama De Caso De Uso](#Diagrama-de-caso-de-uso)
 - [Diagrama Conceitual](#Diagrama-Conceitual)
 - [Diagrama De Classe](#Diagrama-De-Classe)
+- [Diagrama MySQL](#Diagrama-MySQL)
 
 Abaixo estão os diagramas elaborados no UML:
 
@@ -48,6 +49,10 @@ O Diagrama Conceitual serve para fornecer uma representação visual das princip
 ![image](https://github.com/AfroGlow/BackendAfroGlow/assets/111551364/9730a8bb-d5ef-4440-8bfc-8287edaf989e)
 
 O Diagrama de Classe é uma ferramenta fundamental na modelagem de sistemas orientados a objetos e serve para representar a estrutura estática de um sistema, mostrando as classes, seus atributos, métodos e os relacionamentos entre as classes. 
+
+## Diagrama MySQL - Modelo EER
+
+O Diagrama MySQL, ou Modelo EER, é uma representação visual das tabelas em um banco de dados e das relações entre essas tabelas. Ele geralmente é gerado usando ferramentas de design de banco de dados, como o MySQL Workbench. Esses diagramas oferecem uma visão visual dos diferentes componentes do banco de dados, incluindo tabelas, colunas e suas relações.
 
 <hr>
 
