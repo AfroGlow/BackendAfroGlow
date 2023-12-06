@@ -1,4 +1,4 @@
-**Backend AfroGlow**
+## Backend AfroGlow
 
 *Motivação do Projeto:*
 Este projeto foi concebido com o intuito de criar uma solução robusta e eficiente para atender às demandas crescentes no âmbito de sistemas backend. A escolha das tecnologias Java, MySQL e Spring Boot foi motivada pela reputação de confiabilidade, escalabilidade e facilidade de desenvolvimento que essas tecnologias proporcionam.
@@ -138,6 +138,7 @@ Agradecemos a contribuição valiosa de cada membro da equipe!
 Siga a AfroGlow nas redes sociais para ficar por dentro das últimas novidades e atualizações:
 
 - Beacons: [Beacons AfroGlow](https://beacons.ai/afroglow_)
+- Linkedin [Linkedin AfroGlow](https://www.linkedin.com/company/afroglow2023/)
 - Instagram: [@afroglow_](https://www.instagram.com/afroglow__/)
 
 <hr>
