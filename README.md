@@ -14,6 +14,7 @@ Este projeto representou uma jornada valiosa de aprendizado. Aprofundamos nossos
 Links para acessar mais facilmente cada um dos tópicos do README.
 
 - [Arquitetura](#arquitetura)
+- [Tecnologias Utilizadas](#Tecnologias)
 - [Instruções de execução](#instruções-de-execução)
 - [Contribua com o projeto](#contribua-com-o-projeto)
 - [Extra](#extra---adicione-badges)
@@ -39,6 +40,8 @@ Abaixo estão os diagramas elaborados no UML:
 **SQL**
 *Utilizamos SQL para armazenar nossos dados. Por se tratar de uma linguagem de banco de dados relacional, preferimos por ser mais organizado e eficiente no armazenamento de dados.*
 
+
+##Tecnologias Utilizadas
 
 ## Instruções de execução
 
