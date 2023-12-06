@@ -9,6 +9,8 @@ Ao implementar este projeto, enfrentamos diversos desafios que contribuíram sig
 *Aprendizados Obtidos:*
 Este projeto representou uma jornada valiosa de aprendizado. Aprofundamos nossos conhecimentos em programação Java, aprimoramos as habilidades de modelagem de banco de dados com MySQL e exploramos as funcionalidades avançadas do framework Spring Boot. Além disso, a experiência prática de lidar com desafios do mundo real proporcionou insights valiosos sobre boas práticas de desenvolvimento, arquitetura de software e estratégias eficazes para a solução de problemas complexos.
 
+<hr>
+
 ## Tabela de conteúdos
 
 Links para acessar mais facilmente cada um dos tópicos do README.
@@ -20,6 +22,8 @@ Links para acessar mais facilmente cada um dos tópicos do README.
 - [Changelog](#Changelog)
 - [Desenvolvedores](#Equipe-de-Desenvolvimento)
 - [Redes Sociais](#Siga-nas-Redes-Sociais)
+
+<hr>
 
 ## Arquitetura
 
@@ -44,6 +48,8 @@ O Diagrama Conceitual serve para fornecer uma representação visual das princip
 ![image](https://github.com/AfroGlow/BackendAfroGlow/assets/111551364/9730a8bb-d5ef-4440-8bfc-8287edaf989e)
 
 O Diagrama de Classe é uma ferramenta fundamental na modelagem de sistemas orientados a objetos e serve para representar a estrutura estática de um sistema, mostrando as classes, seus atributos, métodos e os relacionamentos entre as classes. 
+
+<hr>
 
 ## Tecnologias Utilizadas
 
