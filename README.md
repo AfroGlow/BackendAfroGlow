@@ -77,6 +77,8 @@ Siga a AfroGlow nas redes sociais para ficar por dentro das últimas novidades e
 
 - Instagram: [@afroglow_](https://www.instagram.com/afroglow_/)
 
+<hr>
+
 [![MySQL](https://img.shields.io/badge/mysql-%23000.svg?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)
 [![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white)](https://spring.io/)
 [![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)](https://www.java.com/)
