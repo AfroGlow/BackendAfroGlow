@@ -19,8 +19,8 @@ public class BoxService {
         return boxRepository.findAll();
     }
 
-    public Box getBoxById(Long id) {
-        return boxRepository.findById(id).orElse(null);
+    public Box getBoxById(Integer boxId) {
+        return boxRepository.findById(boxId).orElse(null);
     }
 
     public Box createBox(BoxRequestDTO boxRequestDTO) {
@@ -28,8 +28,8 @@ public class BoxService {
         return boxRepository.save(box);
     }
 
-    public Box updateBox(Long id, BoxRequestDTO boxRequestDTO) {
-        Box existingBox = boxRepository.findById(id).orElse(null);
+    public Box updateBox(Integer boxId, BoxRequestDTO boxRequestDTO) {
+        Box existingBox = boxRepository.findById(boxId).orElse(null);
         if (existingBox != null) {
             existingBox.setTipoDeBox(boxRequestDTO.getTipoDeBox());
             existingBox.setPreco(boxRequestDTO.getPreco());
@@ -39,7 +39,7 @@ public class BoxService {
         return null;
     }
 
-    public void deleteBox(Long id) {
-        boxRepository.deleteById(id);
+    public void deleteBox(Integer boxId) {
+        boxRepository.deleteById(boxId);
     }
 }

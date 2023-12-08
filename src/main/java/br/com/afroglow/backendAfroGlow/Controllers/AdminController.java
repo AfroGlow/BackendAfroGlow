@@ -19,14 +19,14 @@ public class AdminController {
     }
 
     @PostMapping
-    public ResponseEntity<Admin> adicionarAdmin(@RequestBody Admin admin) {
+    public ResponseEntity<String> adicionarAdmin(@RequestBody Admin admin) {
         adminService.adicionarAdmin(admin);
-        return new ResponseEntity<>(admin, HttpStatus.CREATED);
+        return new ResponseEntity<>("Administrador adicionado com sucesso!", HttpStatus.CREATED);
     }
 
-    @GetMapping("/visualizar/{idAdmin}")
-    public ResponseEntity<Admin> visualizarAdmin(@PathVariable Long idAdmin) {
-        Admin admin = adminService.visualizarAdmin(idAdmin);
+    @GetMapping("/{idAdmin}")
+    public ResponseEntity<Admin> visualizarAdmin(@PathVariable Integer adminId) {
+        Admin admin = adminService.visualizarAdmin(adminId);
 
         if (admin != null) {
             return new ResponseEntity<>(admin, HttpStatus.OK);
@@ -36,9 +36,9 @@ public class AdminController {
     }
 
     @PutMapping
-    public ResponseEntity<Admin> atualizarAdmin(@RequestBody Admin admin) {
+    public ResponseEntity<String> atualizarAdmin(@RequestBody Admin admin) {
         adminService.atualizarAdmin(admin);
-        return new ResponseEntity<>(admin, HttpStatus.OK);
+        return new ResponseEntity<>("Administrador atualizado com sucesso!", HttpStatus.OK);
     }
 
     // Você pode adicionar endpoints para outras operações, como exclusão, se necessário.

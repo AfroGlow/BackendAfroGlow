@@ -29,12 +29,12 @@ public class EnderecoService {
         enderecoRepository.save(endereco);
     }
 
-    public void deletarEndereco(Long id) {
-        enderecoRepository.deleteById(id);
+    public void deletarEndereco(Integer enderecoId) {
+        enderecoRepository.deleteById(enderecoId);
     }
 
-    public String getEndereco(Long id) {
-        Endereco endereco = enderecoRepository.findById(id).orElse(null);
+    public String getEndereco(Integer enderecoId) {
+        Endereco endereco = enderecoRepository.findById(enderecoId).orElse(null);
         if (endereco != null) {
             return endereco.toString();
         } else {
@@ -42,7 +42,7 @@ public class EnderecoService {
         }
     }
 
-    public Endereco visualizarEndereco(Long enderecoId) {
+    public Endereco visualizarEndereco(Integer enderecoId) {
         return null;
     }
 }

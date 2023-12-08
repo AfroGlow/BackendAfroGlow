@@ -15,10 +15,10 @@ public class Crianca {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idCrianca")
-    private Long idCrianca;
+    private Integer idCrianca;
 
     @Column(name = "idUsuario", nullable = false)
-    private Long idUsuario;
+    private Integer idUsuario;
 
     @Column(name = "idDefinicaoDoCabelo", nullable = false)
     private String idDefinicaoDoCabelo;
@@ -45,7 +45,7 @@ public class Crianca {
     public Crianca() {
     }
 
-    public Crianca(Long idUsuario, String idDefinicaoDoCabelo, String nomeCompleto, String nomeFantasia, Date dataDeNascimento, String status) {
+    public Crianca(Integer idUsuario, String idDefinicaoDoCabelo, String nomeCompleto, String nomeFantasia, Date dataDeNascimento, String status) {
         this.idUsuario = idUsuario;
         this.idDefinicaoDoCabelo = idDefinicaoDoCabelo;
         this.nomeCompleto = nomeCompleto;
@@ -54,20 +54,20 @@ public class Crianca {
         this.status = status;
     }
 
-    public Long getIdCrianca() {
+    public Integer getIdCrianca() {
         return idCrianca;
     }
 
-    public void setIdCrianca(Long idCrianca) {
+    public void setIdCrianca(Integer idCrianca) {
         this.idCrianca = idCrianca;
     }
 
-    public Long getIdUsuario() {
+    public Integer getIdUsuario() {
         return idUsuario;
     }
 
-    public void setIdUsuario(Long idUsuario) {
-        this.idUsuario = idUsuario;
+    public void setIdUsuario(Integer long1) {
+        this.idUsuario = long1;
     }
 
     public String getIdDefinicaoDoCabelo() {

@@ -24,9 +24,9 @@ public class PedidoBoxController {
         return pedidoBoxService.getAllPedidosBox();
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<PedidoBox> getPedidoBoxById(@PathVariable Long id) {
-        Optional<PedidoBox> pedidoBox = pedidoBoxService.getPedidoBoxById(id);
+    @GetMapping("/{pedidoBoxId}")
+    public ResponseEntity<PedidoBox> getPedidoBoxById(@PathVariable Integer pedidoBoxId) {
+        Optional<PedidoBox> pedidoBox = pedidoBoxService.getPedidoBoxById(pedidoBoxId);
         return pedidoBox.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
@@ -36,15 +36,15 @@ public class PedidoBoxController {
         return ResponseEntity.status(HttpStatus.CREATED).body(pedidoBox);
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<PedidoBox> updatePedidoBox(@PathVariable Long id, @RequestBody PedidoBoxRequestDTO pedidoBoxRequestDTO) {
-        Optional<PedidoBox> updatedPedidoBox = pedidoBoxService.updatePedidoBox(id, pedidoBoxRequestDTO);
+    @PutMapping("/{pedidoBoxId}")
+    public ResponseEntity<PedidoBox> updatePedidoBox(@PathVariable Integer pedidoBoxId, @RequestBody PedidoBoxRequestDTO pedidoBoxRequestDTO) {
+        Optional<PedidoBox> updatedPedidoBox = pedidoBoxService.updatePedidoBox(pedidoBoxId, pedidoBoxRequestDTO);
         return updatedPedidoBox.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deletePedidoBox(@PathVariable Long id) {
-        boolean deleted = pedidoBoxService.deletePedidoBox(id);
+    @DeleteMapping("/{pedidoBoxId}")
+    public ResponseEntity<Void> deletePedidoBox(@PathVariable Integer pedidoBoxId) {
+        boolean deleted = pedidoBoxService.deletePedidoBox(pedidoBoxId);
         return deleted ? ResponseEntity.noContent().build() : ResponseEntity.notFound().build();
     }
 }

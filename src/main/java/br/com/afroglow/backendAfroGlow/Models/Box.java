@@ -11,7 +11,7 @@
 
 //     @Id
 //     @GeneratedValue(strategy = GenerationType.IDENTITY)
-//     private Long idBox;
+//     private Integer idBox;
 
 //     private String tipoDeBox;
 //     private double preco;
@@ -31,11 +31,11 @@
 //         this.qtdDeProdutos = qtdDeProdutos;
 //     }
 
-//     public Long getIdBox() {
+//     public Integer getIdBox() {
 //         return idBox;
 //     }
 
-//     public void setIdBox(Long idBox) {
+//     public void setIdBox(Integer idBox) {
 //         this.idBox = idBox;
 //     }
 
@@ -74,7 +74,7 @@ public class Box {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idBox")
-    private Long idBox;
+    private Integer idBox;
 
     @Column(nullable = false)
     private String tipoDeBox;
@@ -96,12 +96,12 @@ public class Box {
 
   
 
-    public Long getIdBox() {
+    public Integer getIdBox() {
         return idBox;
     }
 
-    public void setIdBox(Long idBox) {
-        this.idBox = idBox;
+    public void setIdBox(Integer boxId) {
+        this.idBox = boxId;
     }
 
     public String getTipoDeBox() {

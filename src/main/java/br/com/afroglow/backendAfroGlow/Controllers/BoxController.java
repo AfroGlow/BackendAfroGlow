@@ -31,9 +31,9 @@ public class BoxController {
         return boxRepository.findAll();
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Box> getBoxById(@PathVariable Long id) {
-        Optional<Box> box = boxRepository.findById(id);
+    @GetMapping("/{boxId}")
+    public ResponseEntity<Box> getBoxById(@PathVariable Integer boxId) {
+        Optional<Box> box = boxRepository.findById(boxId);
         return box.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
@@ -43,24 +43,23 @@ public class BoxController {
         return ResponseEntity.status(HttpStatus.CREATED).body(savedBox);
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<Box> updateBox(@PathVariable Long id, @RequestBody Box updatedBox) {
-        if (!boxRepository.existsById(id)) {
+    @PutMapping
+    public ResponseEntity<Box> updateBox(@PathVariable Integer boxId, @RequestBody Box updatedBox) {
+        if (!boxRepository.existsById(boxId)) {
             return ResponseEntity.notFound().build();
         }
 
-        updatedBox.setIdBox(id);
+        updatedBox.setIdBox(boxId);
         Box savedBox = boxRepository.save(updatedBox);
         return ResponseEntity.ok(savedBox);
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteBox(@PathVariable Long id) {
-        if (!boxRepository.existsById(id)) {
+    @DeleteMapping("/{boxId}")
+    public ResponseEntity<Void> deleteBox(@PathVariable Integer boxId) {
+        if (!boxRepository.existsById(boxId)) {
             return ResponseEntity.notFound().build();
         }
-
-        boxRepository.deleteById(id);
+        boxRepository.deleteById(boxId);
         return ResponseEntity.noContent().build();
     }
 }

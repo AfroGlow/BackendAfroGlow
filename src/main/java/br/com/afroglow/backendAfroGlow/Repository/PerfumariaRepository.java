@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import br.com.afroglow.backendAfroGlow.Models.Perfumaria;
 
 @Repository
-public interface PerfumariaRepository extends JpaRepository<Perfumaria, Long> {
+public interface PerfumariaRepository extends JpaRepository<Perfumaria, Integer> {
 
 
 }

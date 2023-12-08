@@ -5,7 +5,7 @@ import java.sql.Date;
 public class CriancaRequestDTO {
     private Date dataDeNascimento;
     private String idDefinicaoDoCabelo;
-    private Long idUsuario;
+    private Integer idUsuario;
     private String nomeCompleto;
     private String nomeFantasia;
     private String status;
@@ -28,11 +28,11 @@ public class CriancaRequestDTO {
         this.idDefinicaoDoCabelo = idDefinicaoDoCabelo;
     }
 
-    public Long getIdUsuario() {
+    public Integer getIdUsuario() {
         return idUsuario;
     }
 
-    public void setIdUsuario(Long idUsuario) {
+    public void setIdUsuario(Integer idUsuario) {
         this.idUsuario = idUsuario;
     }
 
@@ -60,6 +60,6 @@ public class CriancaRequestDTO {
         this.status = status;
     }
 
-    public void setIdCrianca(Long id) {
+    public void setIdCrianca(Integer id) {
     }
 }

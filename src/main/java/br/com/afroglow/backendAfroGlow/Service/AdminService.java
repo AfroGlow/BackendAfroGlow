@@ -21,8 +21,8 @@ public class AdminService {
         adminRepository.save(admin);
     }
 
-    public Admin visualizarAdmin(Long idAdmin) {
-        Optional<Admin> adminOptional = adminRepository.findById(idAdmin);
+    public Admin visualizarAdmin(Integer adminId) {
+        Optional<Admin> adminOptional = adminRepository.findById(adminId);
         return adminOptional.orElse(null);
     }
 

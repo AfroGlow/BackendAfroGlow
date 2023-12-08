@@ -4,7 +4,7 @@ import br.com.afroglow.backendAfroGlow.DTO.CriancaRequestDTO;
 import br.com.afroglow.backendAfroGlow.Models.Crianca;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface CriancaRepository extends JpaRepository<Crianca, Long> {
+public interface CriancaRepository extends JpaRepository<Crianca, Integer> {
 
     Crianca save(CriancaRequestDTO criancaRequestDTO);
   

@@ -24,9 +24,9 @@ public class CriancaController {
         return criancaService.getAllCriancas();
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Crianca> getCriancaById(@PathVariable Long id) {
-        Optional<Crianca> crianca = criancaService.getCriancaById(id);
+    @GetMapping("/{criancaId}")
+    public ResponseEntity<Crianca> getCriancaById(@PathVariable Integer criancaId) {
+        Optional<Crianca> crianca = criancaService.getCriancaById(criancaId);
         return crianca.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
@@ -37,15 +37,15 @@ public class CriancaController {
         return ResponseEntity.status(HttpStatus.CREATED).body(savedCrianca);
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<Crianca> updateCrianca(@PathVariable Long id, @RequestBody CriancaRequestDTO criancaRequestDTO) {
-        Optional<Crianca> updatedCrianca = criancaService.updateCrianca(id, criancaRequestDTO);
+    @PutMapping("/{criancaId}")
+    public ResponseEntity<Crianca> updateCrianca(@PathVariable Integer criancaId, @RequestBody CriancaRequestDTO criancaRequestDTO) {
+        Optional<Crianca> updatedCrianca = criancaService.updateCrianca(criancaId, criancaRequestDTO);
         return updatedCrianca.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteCrianca(@PathVariable Long id) {
-        boolean deleted = criancaService.deleteCrianca(id);
+    @DeleteMapping("/{criancaId}")
+    public ResponseEntity<Void> deleteCrianca(@PathVariable Integer criancaId) {
+        boolean deleted = criancaService.deleteCrianca(criancaId);
         return deleted ? ResponseEntity.noContent().build() : ResponseEntity.notFound().build();
     }
 

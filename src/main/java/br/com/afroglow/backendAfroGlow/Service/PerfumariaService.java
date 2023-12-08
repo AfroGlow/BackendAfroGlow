@@ -23,15 +23,15 @@ public class PerfumariaService {
         return perfumariaRepository.findAll();
     }
 
-    public Optional<Perfumaria> getPerfumariaById(Long id) {
-        return perfumariaRepository.findById(id);
+    public Optional<Perfumaria> getPerfumariaById(Integer perfumariaId) {
+        return perfumariaRepository.findById(perfumariaId);
     }
 
     public Perfumaria savePerfumaria(Perfumaria perfumaria) {
         return perfumariaRepository.save(perfumaria);
     }
 
-    public void deletePerfumaria(Long id) {
-        perfumariaRepository.deleteById(id);
+    public void deletePerfumaria(Integer perfumariaId) {
+        perfumariaRepository.deleteById(perfumariaId);
     }
 }

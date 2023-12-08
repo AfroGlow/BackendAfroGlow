@@ -19,15 +19,15 @@ public class DefinicaoDoCabeloService {
         definicaoDoCabeloRepository.save(definicaoDoCabelo);
     }
 
-    public DefinicaoDoCabelo visualizarDefinicaoDoCabelo(Long idDefinicaoDoCabelo) {
-        return definicaoDoCabeloRepository.findById(idDefinicaoDoCabelo).orElse(null);
+    public DefinicaoDoCabelo visualizarDefinicaoDoCabelo(Integer definicaoDoCabeloId) {
+        return definicaoDoCabeloRepository.findById(definicaoDoCabeloId).orElse(null);
     }
 
     public void atualizarDefinicaoDoCabelo(DefinicaoDoCabelo definicaoDoCabelo) {
         definicaoDoCabeloRepository.save(definicaoDoCabelo);
     }
 
-    public void deletarDefinicaoDoCabelo(Long idDefinicaoDoCabelo) {
-        definicaoDoCabeloRepository.deleteById(idDefinicaoDoCabelo);
+    public void deletarDefinicaoDoCabelo(Integer definicaoDoCabeloId) {
+        definicaoDoCabeloRepository.deleteById(definicaoDoCabeloId);
     }
 }

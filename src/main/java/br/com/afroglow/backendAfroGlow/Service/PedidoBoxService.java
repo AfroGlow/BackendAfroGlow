@@ -20,8 +20,8 @@ public class PedidoBoxService {
         return pedidoBoxRepository.save(pedidoBox);
     }
 
-    public Optional<PedidoBox> getPedidoBoxById(Long id) {
-        return pedidoBoxRepository.findById(id);
+    public Optional<PedidoBox> getPedidoBoxById(Integer pedidoBoxId) {
+        return pedidoBoxRepository.findById(pedidoBoxId);
     }
 
     // Implemente métodos adicionais conforme necessário
@@ -35,11 +35,11 @@ public class PedidoBoxService {
         return pedidoBox;
     }
 
-    public boolean deletePedidoBox(Long id) {
+    public boolean deletePedidoBox(Integer pedidoBoxId) {
         return false;
     }
 
-    public Optional<PedidoBox> updatePedidoBox(Long id, PedidoBoxRequestDTO pedidoBoxRequestDTO) {
+    public Optional<PedidoBox> updatePedidoBox(Integer pedidoBoxId, PedidoBoxRequestDTO pedidoBoxRequestDTO) {
         return null;
     }
 

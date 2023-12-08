@@ -24,9 +24,9 @@ public class DefinicaoDoCabeloController {
         return new ResponseEntity<>(definicaoDoCabelo, HttpStatus.CREATED);
     }
 
-    @GetMapping("/visualizar/{idDefinicaoDoCabelo}")
-    public ResponseEntity<DefinicaoDoCabelo> visualizarDefinicaoDoCabelo(@PathVariable Long idDefinicaoDoCabelo) {
-        DefinicaoDoCabelo definicaoDoCabelo = definicaoDoCabeloService.visualizarDefinicaoDoCabelo(idDefinicaoDoCabelo);
+    @GetMapping("/{definicaoDoCabeloId}")
+    public ResponseEntity<DefinicaoDoCabelo> visualizarDefinicaoDoCabelo(@PathVariable Integer definicaoDoCabeloId) {
+        DefinicaoDoCabelo definicaoDoCabelo = definicaoDoCabeloService.visualizarDefinicaoDoCabelo(definicaoDoCabeloId);
 
         if (definicaoDoCabelo != null) {
             return new ResponseEntity<>(definicaoDoCabelo, HttpStatus.OK);
@@ -41,9 +41,9 @@ public class DefinicaoDoCabeloController {
         return new ResponseEntity<>(definicaoDoCabelo, HttpStatus.OK);
     }
 
-    @DeleteMapping("/{idDefinicaoDoCabelo}")
-    public ResponseEntity<String> deletarDefinicaoDoCabelo(@PathVariable Long idDefinicaoDoCabelo) {
-        definicaoDoCabeloService.deletarDefinicaoDoCabelo(idDefinicaoDoCabelo);
+    @DeleteMapping("/{definicaoDoCabeloId}")
+    public ResponseEntity<String> deletarDefinicaoDoCabelo(@PathVariable Integer definicaoDoCabeloId) {
+        definicaoDoCabeloService.deletarDefinicaoDoCabelo(definicaoDoCabeloId);
         return new ResponseEntity<>("Definição do cabelo deletada com sucesso!", HttpStatus.OK);
     }
 }

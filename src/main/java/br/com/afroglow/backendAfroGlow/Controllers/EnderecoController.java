@@ -24,8 +24,8 @@
             return new ResponseEntity<>(endereco, HttpStatus.CREATED);
         }
 
-        @GetMapping("/visualizar/{enderecoId}")
-        public ResponseEntity<Endereco> visualizarEndereco(@PathVariable Long enderecoId) {
+        @GetMapping("/{enderecoId}")
+        public ResponseEntity<Endereco> visualizarEndereco(@PathVariable Integer enderecoId) {
             Endereco endereco = enderecoService.visualizarEndereco(enderecoId);
 
             if (endereco != null) {
@@ -41,9 +41,9 @@
             return new ResponseEntity<>(endereco, HttpStatus.OK);
         }
 
-        @DeleteMapping("/{id}")
-        public ResponseEntity<String> deletarEndereco(@PathVariable Long id) {
-            enderecoService.deletarEndereco(id);
+        @DeleteMapping("/{enderecoId}")
+        public ResponseEntity<String> deletarEndereco(@PathVariable Integer enderecoId) {
+            enderecoService.deletarEndereco(enderecoId);
             return new ResponseEntity<>("Endereço deletado com sucesso!", HttpStatus.OK);
         }
     }

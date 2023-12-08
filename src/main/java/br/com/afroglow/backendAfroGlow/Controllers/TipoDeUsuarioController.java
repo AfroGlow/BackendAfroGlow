@@ -19,9 +19,9 @@ public class TipoDeUsuarioController {
     }
 
     @PostMapping
-    public ResponseEntity<TipoDeUsuario> adicionarTipoDeUsuario(@RequestBody TipoDeUsuario tipoDeUsuario) {
+    public ResponseEntity<String> adicionarTipoDeUsuario(@RequestBody TipoDeUsuario tipoDeUsuario) {
         tipoDeUsuarioService.adicionarTipoDeUsuario(tipoDeUsuario);
-        return new ResponseEntity<>(tipoDeUsuario, HttpStatus.CREATED);
+        return new ResponseEntity<>("Usuário alterado com sucesso!", HttpStatus.CREATED);
     }
 
     @GetMapping("/visualizar/{descricao}")

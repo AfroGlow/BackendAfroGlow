@@ -9,7 +9,7 @@ public class Perfumaria {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idPerfumaria")
-    private Long idPerfumaria;
+    private Integer idPerfumaria;
 
     @Column(name = "nomePerfumaria", nullable = false)
     private String nomePerfumaria;
@@ -22,11 +22,11 @@ public class Perfumaria {
 
  
 
-    public Long getIdPerfumaria() {
+    public Integer getIdPerfumaria() {
         return idPerfumaria;
     }
 
-    public void setIdPerfumaria(Long idPerfumaria) {
+    public void setIdPerfumaria(Integer idPerfumaria) {
         this.idPerfumaria = idPerfumaria;
     }
 

@@ -16,48 +16,48 @@ public class PedidoBox {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_pedido_box")
-    private Long idPedidoBox;
+    private Integer idPedidoBox;
 
     @Column(name = "id_usuario", nullable = false)
-    private Long idUsuario;
+    private Integer idUsuario;
 
     @Column(name = "id_box", nullable = false)
-    private Long idBox;
+    private Integer idBox;
 
     @Column(name = "id_pagamento")
-    private Long idPagamento;
+    private Integer idPagamento;
 
     // Getters and setters
 
-    public Long getIdPedidoBox() {
+    public Integer getIdPedidoBox() {
         return idPedidoBox;
     }
 
-    public void setIdPedidoBox(Long idPedidoBox) {
+    public void setIdPedidoBox(Integer idPedidoBox) {
         this.idPedidoBox = idPedidoBox;
     }
 
-    public Long getIdUsuario() {
+    public Integer getIdUsuario() {
         return idUsuario;
     }
 
-    public void setIdUsuario(Long idUsuario) {
+    public void setIdUsuario(Integer idUsuario) {
         this.idUsuario = idUsuario;
     }
 
-    public Long getIdBox() {
+    public Integer getIdBox() {
         return idBox;
     }
 
-    public void setIdBox(Long idBox) {
+    public void setIdBox(Integer idBox) {
         this.idBox = idBox;
     }
 
-    public Long getIdPagamento() {
+    public Integer getIdPagamento() {
         return idPagamento;
     }
 
-    public void setIdPagamento(Long idPagamento) {
+    public void setIdPagamento(Integer idPagamento) {
         this.idPagamento = idPagamento;
     }
 }

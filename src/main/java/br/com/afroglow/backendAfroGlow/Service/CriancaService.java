@@ -19,25 +19,25 @@ public class CriancaService {
         return criancaRepository.findAll();
     }
 
-    public Optional<Crianca> getCriancaById(Long id) {
-        return criancaRepository.findById(id);
+    public Optional<Crianca> getCriancaById(Integer criancaId) {
+        return criancaRepository.findById(criancaId);
     }
 
     public Crianca createCrianca(Crianca crianca) {
         return criancaRepository.save(crianca);
     }
 
-    public Optional<Crianca> updateCrianca(Long id, CriancaRequestDTO criancaRequestDTO) {
-        Optional<Crianca> existingCrianca = getCriancaById(id);
+    public Optional<Crianca> updateCrianca(Integer criancaId, CriancaRequestDTO criancaRequestDTO) {
+        Optional<Crianca> existingCrianca = getCriancaById(criancaId);
         return existingCrianca.map(crianca -> {
             mapCriancaRequestDTOToCrianca(criancaRequestDTO, crianca);
             return criancaRepository.save(crianca);
         });
     }
 
-    public boolean deleteCrianca(Long id) {
-        if (criancaRepository.existsById(id)) {
-            criancaRepository.deleteById(id);
+    public boolean deleteCrianca(Integer criancaId) {
+        if (criancaRepository.existsById(criancaId)) {
+            criancaRepository.deleteById(criancaId);
             return true;
         }
         return false;

@@ -2,33 +2,33 @@ package br.com.afroglow.backendAfroGlow.DTO;
 
 public class PedidoBoxRequestDTO {
 
-    private Long idUsuario;
-    private Long idBox;
-    private Long idPagamento;
+    private Integer idUsuario;
+    private Integer idBox;
+    private Integer idPagamento;
 
     // Getters and setters
 
-    public Long getIdUsuario() {
+    public Integer getIdUsuario() {
         return idUsuario;
     }
 
-    public void setIdUsuario(Long idUsuario) {
+    public void setIdUsuario(Integer idUsuario) {
         this.idUsuario = idUsuario;
     }
 
-    public Long getIdBox() {
+    public Integer getIdBox() {
         return idBox;
     }
 
-    public void setIdBox(Long idBox) {
+    public void setIdBox(Integer idBox) {
         this.idBox = idBox;
     }
 
-    public Long getIdPagamento() {
+    public Integer getIdPagamento() {
         return idPagamento;
     }
 
-    public void setIdPagamento(Long idPagamento) {
+    public void setIdPagamento(Integer idPagamento) {
         this.idPagamento = idPagamento;
     }
 }
