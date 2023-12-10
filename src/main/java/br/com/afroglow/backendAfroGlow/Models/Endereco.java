@@ -2,6 +2,8 @@ package br.com.afroglow.backendAfroGlow.Models;
 
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 import java.sql.Connection;
@@ -13,7 +15,10 @@ import java.sql.SQLException;
 public class Endereco {
 
 
-    @Id
+       @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    
     private String rua;
     private String bairro;
     private String numero;
