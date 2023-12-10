@@ -8,10 +8,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface DefinicaoDoCabeloRepository extends JpaRepository<DefinicaoDoCabelo, String> {
+public interface DefinicaoDoCabeloRepository extends JpaRepository<DefinicaoDoCabelo, Long> {
+    Optional<DefinicaoDoCabelo> findById(Long id);
 
-    Optional<DefinicaoDoCabelo> findById(Long idDefinicaoDoCabelo);
-
-    void deleteById(Long idDefinicaoDoCabelo);
-  
+    void deleteById(Long id);
 }

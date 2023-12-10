@@ -1,6 +1,9 @@
 package br.com.afroglow.backendAfroGlow.Models;
 
+import jakarta.annotation.Generated;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,11 +13,13 @@ import java.sql.SQLException;
 public class DefinicaoDoCabelo {
     
     @Id
-    private String idDefinicaoDoCabelo;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     private String definicao;
 
-    public DefinicaoDoCabelo(){
-        this.idDefinicaoDoCabelo = "";
+    public DefinicaoDoCabelo() {
+        this.id = null; 
         this.definicao = "";
     }
 
@@ -22,7 +27,7 @@ public class DefinicaoDoCabelo {
         try(Connection conexao = Conexao.obterConexao()){
             String sql = "INSERT INTO definicaodocabelo (idDefinicaoDoCabelo, definicao) VALUES (?, ?)";
             try(PreparedStatement statement = conexao.prepareStatement(sql)){
-                statement.setString(1, idDefinicaoDoCabelo);
+                statement.setLong(1, id);
                 statement.setString(2, definicao);
                 statement.executeUpdate();
             }
@@ -36,7 +41,7 @@ public class DefinicaoDoCabelo {
             String sql = "UPDATE definicaodocabelo SET definicao=? WHERE idDefinicaoDoCabelo=?";
             try(PreparedStatement statement = conexao.prepareStatement(sql)){
                 statement.setString(1, definicao);
-                statement.setString(2, idDefinicaoDoCabelo);
+                statement.setLong(2, id);
                 statement.executeUpdate();
             }
         } catch (SQLException e) {
@@ -48,7 +53,7 @@ public class DefinicaoDoCabelo {
         try(Connection conexao = Conexao.obterConexao()){
             String sql = "DELETE FROM definicaodocabelo WHERE idDefinicaoDoCabelo=?";
             try(PreparedStatement statement = conexao.prepareStatement(sql)){
-                statement.setString(1, idDefinicaoDoCabelo);
+                statement.setLong(1, id);
                 statement.executeUpdate();
             }
         } catch (SQLException e) {
@@ -56,12 +61,12 @@ public class DefinicaoDoCabelo {
         }
     }
 
-    public String getIdDefinicaoDoCabelo(){
-        return idDefinicaoDoCabelo;
+    public Long getIdDefinicaoDoCabelo(){
+        return id;
     }
 
-    public void setIdDefinicaoDoCabelo(String idDefinicaoDoCabelo){
-        this.idDefinicaoDoCabelo = idDefinicaoDoCabelo;
+    public void setIdDefinicaoDoCabelo(Long idDefinicaoDoCabelo){
+        this.id = idDefinicaoDoCabelo;
     }
 
     public String getDefinicao() {
