@@ -14,7 +14,7 @@ public class UsuarioService {
     private final UsuarioRepository usuarioRepository;
 
 
-    //Construtor da classe
+    
     public UsuarioService(UsuarioRepository usuarioRepository) {
         this.usuarioRepository = usuarioRepository;
     }
@@ -50,4 +50,6 @@ public class UsuarioService {
             usuarioRepository.save(usuarioAtualizado);
         } 
 }
+    public void atualizarTipoDeUsuario(Integer tipoDeUsuarioId, Integer usuarioId) {
+    }
 }

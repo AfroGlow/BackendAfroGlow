@@ -46,7 +46,7 @@ public class UsuarioController {
     public ResponseEntity<HttpStatus> atualizarTipoDeUsuario(@RequestBody Integer tipoDeUsuarioId, @RequestBody Integer usuarioId) {
         usuarioService.atualizarTipoDeUsuario(tipoDeUsuarioId, usuarioId);
         return new ResponseEntity<>(HttpStatus.OK);
-
+    }
     public ResponseEntity<String> atualizarUsuario(@RequestBody Usuario usuario) {
         usuarioService.atualizarUsuario(usuario);
         return new ResponseEntity<>("Usuário atualizado com sucesso!", HttpStatus.OK);
