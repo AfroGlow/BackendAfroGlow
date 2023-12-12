@@ -13,6 +13,7 @@ public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int idUsuario;
+
     public int idDefinicaoDeCabelo;
     public int idTipoDeUsuario;
     public String nomeCompleto;

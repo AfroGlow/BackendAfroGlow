@@ -1,6 +1,8 @@
 package br.com.afroglow.backendAfroGlow.Controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,6 +13,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/pagamento")
+@CrossOrigin(origins = "*")
 public class PagamentoController {
     // Propriedade Service
     @Autowired
