@@ -9,9 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/administrador")
-
 @CrossOrigin(origins = "*")
-
 public class AdminController {
 
     private final AdminService adminService;

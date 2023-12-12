@@ -3,7 +3,6 @@ package br.com.afroglow.backendAfroGlow.Models;
 
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.*;
 
 
 @Entity
