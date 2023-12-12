@@ -1,57 +1,66 @@
 package br.com.afroglow.backendAfroGlow.Controllers;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 
-
+import br.com.afroglow.backendAfroGlow.DTO.CriancaRequestDTO;
 import br.com.afroglow.backendAfroGlow.Models.Crianca;
+import br.com.afroglow.backendAfroGlow.Service.CriancaService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+import java.util.Optional;
+
+@RestController
+@RequestMapping("/crianca")
+@CrossOrigin(origins = "*")
 public class CriancaController {
-  
-    private List<Crianca> listaDeCriancas;
 
-    public CriancaController() {
-        this.listaDeCriancas = new ArrayList<>();
+    @Autowired
+    private CriancaService criancaService;
+
+    @GetMapping
+    public List<Crianca> getAllCriancas() {
+        return criancaService.getAllCriancas();
     }
 
-    // Método para salvar uma criança
-    public void salvarCrianca(Crianca crianca) {
-        listaDeCriancas.add(crianca);
-    
+    @GetMapping("/{id}")
+    public ResponseEntity<Crianca> getCriancaById(@PathVariable Long id) {
+        Optional<Crianca> crianca = criancaService.getCriancaById(id);
+        return crianca.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-    // Método para buscar todas as crianças
-    public List<Crianca> buscarTodasCriancas() {
-        return listaDeCriancas;
+    @PostMapping
+    public ResponseEntity<Crianca> createCrianca(@RequestBody CriancaRequestDTO criancaRequestDTO) {
+        Crianca crianca = mapCriancaRequestDTOToCrianca(criancaRequestDTO);
+        Crianca savedCrianca = criancaService.createCrianca(crianca);
+        return ResponseEntity.status(HttpStatus.CREATED).body(savedCrianca);
     }
 
-    // Método para buscar uma criança por nome completo
-    public Crianca buscarCriancaPorNomeCompleto(String nomeCompleto) {
-        for (Crianca crianca : listaDeCriancas) {
-            if (crianca.getNomeCompleto().equals(nomeCompleto)) {
-                return crianca;
-            }
-        }
-        return null; // Retorna null se não encontrar a criança
+    @PutMapping("/{id}")
+    public ResponseEntity<Crianca> updateCrianca(@PathVariable Long id, @RequestBody CriancaRequestDTO criancaRequestDTO) {
+        Optional<Crianca> updatedCrianca = criancaService.updateCrianca(id, criancaRequestDTO);
+        return updatedCrianca.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-
-
-
-    public void atualizarStatusCrianca(String nomeCompleto, String novoStatus) {
-        for (Crianca crianca : listaDeCriancas) {
-            if (crianca.getNomeCompleto().equals(nomeCompleto)) {
-                crianca.setStatus(novoStatus);
-             
-                return;
-            }
-        }
-
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteCrianca(@PathVariable Long id) {
+        boolean deleted = criancaService.deleteCrianca(id);
+        return deleted ? ResponseEntity.noContent().build() : ResponseEntity.notFound().build();
     }
 
-    // Exemplo de método para deletar uma criança
-    public void deletarCrianca(String nomeCompleto) {
-        listaDeCriancas.removeIf(crianca -> crianca.getNomeCompleto().equals(nomeCompleto));
-      
+    private Crianca mapCriancaRequestDTOToCrianca(CriancaRequestDTO criancaRequestDTO) {
+        Crianca crianca = new Crianca();
+        // Mapeie os atributos de CriancaRequestDTO para Crianca aqui
+        crianca.setDataDeNascimento(criancaRequestDTO.getDataDeNascimento());
+        crianca.setIdDefinicaoDoCabelo(criancaRequestDTO.getIdDefinicaoDoCabelo());
+        crianca.setIdUsuario(criancaRequestDTO.getIdUsuario());
+        crianca.setNomeCompleto(criancaRequestDTO.getNomeCompleto());
+        crianca.setNomeFantasia(criancaRequestDTO.getNomeFantasia());
+        crianca.setStatus(criancaRequestDTO.getStatus());
+        // Adicione outros mapeamentos conforme necessário
+
+        return crianca;
     }
 }
+;

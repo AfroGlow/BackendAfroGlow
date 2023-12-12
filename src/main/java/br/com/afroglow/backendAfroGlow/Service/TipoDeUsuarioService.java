@@ -1,36 +1,48 @@
 package br.com.afroglow.backendAfroGlow.Service;
 
 import br.com.afroglow.backendAfroGlow.Models.TipoDeUsuario;
+import br.com.afroglow.backendAfroGlow.Repository.TipoDeUsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class TipoDeUsuarioService {
 
-    private final TipoDeUsuario tipoDeUsuario;
+    private final TipoDeUsuarioRepository tipoDeUsuarioRepository;
 
     @Autowired
-    public TipoDeUsuarioService(TipoDeUsuario tipoDeUsuario) {
-        this.tipoDeUsuario = tipoDeUsuario;
+    public TipoDeUsuarioService(TipoDeUsuarioRepository tipoDeUsuarioRepository) {
+        this.tipoDeUsuarioRepository = tipoDeUsuarioRepository;
     }
 
-    public void adicionarDescricao() {
-        tipoDeUsuario.adicionarDescricao();
+    public void adicionarTipoDeUsuario(TipoDeUsuario tipoDeUsuario) {
+        tipoDeUsuarioRepository.save(tipoDeUsuario);
     }
 
-    public void visualizarDescricao() {
-        tipoDeUsuario.visualizarDescricao();
+    public List<TipoDeUsuario> visualizarTiposDeUsuario() {
+        return tipoDeUsuarioRepository.findAll();
     }
 
-    public void atualizarDescricao() {
-        tipoDeUsuario.atualizarDescricao();
+    public void atualizarTipoDeUsuario(TipoDeUsuario tipoDeUsuario) {
+        tipoDeUsuarioRepository.save(tipoDeUsuario);
     }
 
-    public void deletarDescricao() {
-        tipoDeUsuario.deletarDescricao();
-    }
+    // public void deletarTipoDeUsuario(String descricao) {
+    //     tipoDeUsuarioRepository.deleteById(descricao);
+    // }
 
-    public String getDescricao() {
-        return tipoDeUsuario.getDescricao();
+    // public String getTipoDeUsuario(String descricao) {
+    //     TipoDeUsuario tipoDeUsuario = tipoDeUsuarioRepository.findById(descricao).orElse(null);
+    //     if (tipoDeUsuario != null) {
+    //         return tipoDeUsuario.toString();
+    //     } else {
+    //         return "Tipo de usuário não encontrado.";
+    //     }
+    // }
+
+    public TipoDeUsuario visualizarTipoDeUsuario(String descricao) {
+        return null;
     }
 }
