@@ -10,6 +10,7 @@
     @RestController
     @RequestMapping("/endereco")
     @CrossOrigin(origins = "*")
+
     public class EnderecoController {
 
         private final EnderecoService enderecoService;

@@ -1,84 +1,89 @@
+
+
+import { BrowserRouter as Router, Route,  Routes, Link } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './app.css'
+import './App.css';
+// import Crianca from './Pages/Crianca';
+import ListCrianca from './components/ListCrianca';
+import AddCrianca from './components/AddCrianca';
+import EditCrianca from './components/EditCrianca';
+import BoxList from './components/BoxList';
+import Login from './Pages/Login/Login';
 
-function App() {
-  const [boxes, setBoxes] = useState([]);
-  const [newBox, setNewBox] = useState({ tipoDeBox: 0, descricao: '', preco: 0 });
+const App = () => {
+
+
+ 
+
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
-    loadBoxes();
+    // Check user's authentication status on component mount
+    checkAuthenticationStatus();
   }, []);
 
-  const loadBoxes = async () => {
+  const checkAuthenticationStatus = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/api/boxes');
-      setBoxes(response.data);
+      const response = await axios.get('http://localhost:8080/api/check-auth', {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('token')}`,
+        },
+      });
+      setIsLoggedIn(response.data.isAuthenticated);
     } catch (error) {
-      console.error('Erro ao carregar caixas', error);
+      console.error('Error checking authentication status:', error);
     }
   };
 
-  const saveBox = async () => {
-    try {
-      await axios.post('http://localhost:8080/api/boxes', newBox);
-      setNewBox({ tipoDeBox: 0, descricao: '', preco: 0 });
-      loadBoxes();
-    } catch (error) {
-      console.error('Erro ao salvar caixa', error);
-    }
+  const handleLogout = () => {
+    // Implement logout logic here
+    // Clear token from local storage and update state
+    localStorage.removeItem('token');
+    setIsLoggedIn(false);
   };
-
-  const deleteBox = async (id) => {
-    try {
-      await axios.delete(`http://localhost:8080/api/boxes/${id}`);
-      loadBoxes();
-    } catch (error) {
-      console.error('Erro ao deletar caixa', error);
-    }
-  };
-
   return (
-    <div>
-      <h1>GlowBox!</h1>
-      <ul>
-        {boxes.map((box) => (
-          <li key={box.id}>
-            {box.descricao} - R${box.preco}{' '}
-            <button onClick={() => deleteBox(box.id)}>Deletar</button>
+    <Router>
+    <div className="container">
+      <nav>
+        <ul>
+          <li>
+            <Link to="/list">Listar Crianças</Link>
           </li>
-        ))}
-      </ul>
-      <h2>Nova Box</h2>
-      <label>
-        Tipo de Box:
-        <input
-          type="number"
-          value={newBox.tipoDeBox}
-          onChange={(e) => setNewBox({ ...newBox, tipoDeBox: e.target.value })}
-        />
-      </label>
-      <br />
-      <label>
-        Descrição:
-        <input
-          type="text"
-          value={newBox.descricao}
-          onChange={(e) => setNewBox({ ...newBox, descricao: e.target.value })}
-        />
-      </label>
-      <br />
-      <label>
-        Preço:
-        <input
-          type="number"
-          value={newBox.preco}
-          onChange={(e) => setNewBox({ ...newBox, preco: e.target.value })}
-        />
-      </label>
-      <br />
-      <button onClick={saveBox}>Salvar</button>
+          <li>
+            <Link to="/add">Adicionar Criança</Link>
+            
+          </li>
+       
+
+          <li>
+            <Link to="/boxlist">box list</Link>
+            
+          </li>
+
+          {isLoggedIn ? (
+          <li>
+          <Link to="/login" onClick={handleLogout}>Sair </Link>
+          </li>
+        ) : (
+          <li> <Link to="/login"> Entrar </Link></li>
+        )}
+        </ul>
+      </nav>
+
+      <hr />
+
+      <Routes>
+   
+      <Route path="/boxlist" element={<BoxList />} />
+        <Route path="/list" element={<ListCrianca />} />
+        <Route path="/add" element={<AddCrianca />} />
+        <Route path="/edit" element={<EditCrianca />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
     </div>
+  </Router>
   );
 }
 
