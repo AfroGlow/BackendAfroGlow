@@ -42,7 +42,6 @@ public class UsuarioController {
     }
 
     @PutMapping
-
     public ResponseEntity<HttpStatus> atualizarTipoDeUsuario(@RequestBody Integer tipoDeUsuarioId, @RequestBody Integer usuarioId) {
         usuarioService.atualizarTipoDeUsuario(tipoDeUsuarioId, usuarioId);
         return new ResponseEntity<>(HttpStatus.OK);
