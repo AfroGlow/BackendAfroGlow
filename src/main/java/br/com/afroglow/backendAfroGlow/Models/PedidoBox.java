@@ -27,7 +27,7 @@ public class PedidoBox {
     @Column(name = "id_pagamento")
     private Long idPagamento;
 
-    // Getters and setters
+
 
     public Long getIdPedidoBox() {
         return idPedidoBox;

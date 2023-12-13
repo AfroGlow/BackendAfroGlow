@@ -9,9 +9,6 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/administrador")
-
-@CrossOrigin(origins = "*")
-
 public class AdminController {
 
     private final AdminService adminService;
@@ -44,5 +41,4 @@ public class AdminController {
         return new ResponseEntity<>(admin, HttpStatus.OK);
     }
 
-    // Você pode adicionar endpoints para outras operações, como exclusão, se necessário.
 }

@@ -8,5 +8,6 @@ import org.springframework.stereotype.Repository;
 public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
 
     void save(Integer usuarioId);
-    // Se necessário, você pode adicionar métodos personalizados aqui
+    Usuario findByNomeCompletoAndSenha(String nomeCompleto, String senha);
+ 
 }

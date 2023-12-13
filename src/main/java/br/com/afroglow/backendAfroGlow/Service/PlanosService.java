@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-// import java.util.List;
+
 
 import br.com.afroglow.backendAfroGlow.Models.Planos;
 import br.com.afroglow.backendAfroGlow.Repository.PlanosRepository;
@@ -15,7 +15,7 @@ import br.com.afroglow.backendAfroGlow.Repository.PlanosRepository;
 public class PlanosService {
     private final PlanosRepository planosRepository;
 
-    // Construtor da classe
+ 
     @Autowired
     public PlanosService(PlanosRepository planosRepository) {
         this.planosRepository = planosRepository;

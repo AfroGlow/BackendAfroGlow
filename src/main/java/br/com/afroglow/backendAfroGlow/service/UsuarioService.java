@@ -1,6 +1,6 @@
 package br.com.afroglow.backendAfroGlow.Service;
 
-// import java.sql.Date;
+
 import java.util.Optional;
 import java.util.List;
 import org.springframework.stereotype.Service;
@@ -14,7 +14,7 @@ public class UsuarioService {
     private final UsuarioRepository usuarioRepository;
 
 
-    
+   
     public UsuarioService(UsuarioRepository usuarioRepository) {
         this.usuarioRepository = usuarioRepository;
     }
@@ -50,6 +50,4 @@ public class UsuarioService {
             usuarioRepository.save(usuarioAtualizado);
         } 
 }
-    public void atualizarTipoDeUsuario(Integer tipoDeUsuarioId, Integer usuarioId) {
-    }
 }

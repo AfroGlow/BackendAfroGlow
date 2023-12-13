@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface PlanosRepository extends JpaRepository<Planos, Integer> {
-    // Se necessário, você pode adicionar métodos personalizados aqui
+
 }

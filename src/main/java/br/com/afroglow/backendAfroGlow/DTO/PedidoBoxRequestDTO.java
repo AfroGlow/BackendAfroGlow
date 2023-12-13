@@ -6,8 +6,6 @@ public class PedidoBoxRequestDTO {
     private Long idBox;
     private Long idPagamento;
 
-    // Getters and setters
-
     public Long getIdUsuario() {
         return idUsuario;
     }

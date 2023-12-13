@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/definicaodocabelo")
-@CrossOrigin(origins = "*")
-
 public class DefinicaoDoCabeloController {
 
     private final DefinicaoDoCabeloService definicaoDoCabeloService;

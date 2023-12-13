@@ -27,7 +27,7 @@ public class Endereco {
     private String estado;
     private String cep;
 
-    // Construtor que inicializa os atributos com valores padrão
+
     public Endereco() {
         this.rua = "";
         this.numero = "";
@@ -38,7 +38,7 @@ public class Endereco {
         this.cep = "";
     }
 
-    // Método para adicionar uma descrição no banco de dados
+   
     public void adicionarEndereco() {
         try (Connection conexao = Conexao.obterConexao()) {
             String sql = "INSERT INTO endereco (rua, bairro, numero, complemento, cidade, estado, cep ) VALUES (?, ?, ?, ?, ?, ?, ?)";
@@ -58,7 +58,7 @@ public class Endereco {
         }
     }
 
-    // Método para visualizar a descrição a partir do banco de dados
+
     public void visualizarEndereco() {
         try (Connection conexao = Conexao.obterConexao()) {
             String sql = "SELECT rua, bairro, numero, complemento, cidade, estado, cep FROM endereco";
@@ -81,7 +81,7 @@ public class Endereco {
         }
     }
 
-    // Método para atualizar o Endereço no banco de dados
+   
     public void atualizarEndereco() {
         try (Connection conexao = Conexao.obterConexao()) {
             String sql = "UPDATE endereco SET rua=?, bairro=?, numero=?, complemento=?, cidade=?, estado=?, cep=?";

@@ -11,7 +11,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/parcerias")
-@CrossOrigin(origins = "*")
 public class ParceriaController {
 
     @Autowired

@@ -12,12 +12,12 @@ public class PlanoUsuarioService {
 
     private final PlanoUsuarioRepository planoUsuarioRepository;
 
-    // Construtor da classe
+ 
     public PlanoUsuarioService(PlanoUsuarioRepository planoUsuarioRepository) {
         this.planoUsuarioRepository = planoUsuarioRepository;
     }
 
-        //Criando objeto, passando paramentros para o objeto e salvando o objeto no repositório.
+      
         public void vincularPlanoUsuario(Integer planoId, Integer usuarioId, String statusPagamento){
             PlanoUsuario planoUsuarioObjeto = new PlanoUsuario();
             planoUsuarioObjeto.idUsuario = usuarioId;
