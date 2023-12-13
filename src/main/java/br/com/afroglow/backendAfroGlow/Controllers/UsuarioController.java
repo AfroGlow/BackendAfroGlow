@@ -19,13 +19,12 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/usuario")
-@CrossOrigin(origins="*")
+@CrossOrigin(origins = "*")
 public class UsuarioController {
-    // Propriedade Service
+
     @Autowired
     private final UsuarioService usuarioService;
 
-    // Criando construtor
     public UsuarioController(UsuarioService usuarioService) {
         this.usuarioService = usuarioService;
     }
@@ -42,14 +41,9 @@ public class UsuarioController {
     }
 
     @PutMapping
-    public ResponseEntity<HttpStatus> atualizarTipoDeUsuario(@RequestBody Integer tipoDeUsuarioId, @RequestBody Integer usuarioId) {
-        usuarioService.atualizarTipoDeUsuario(tipoDeUsuarioId, usuarioId);
-        return new ResponseEntity<>(HttpStatus.OK);
-    }
     public ResponseEntity<String> atualizarUsuario(@RequestBody Usuario usuario) {
         usuarioService.atualizarUsuario(usuario);
         return new ResponseEntity<>("Usuário atualizado com sucesso!", HttpStatus.OK);
-
     }
 
     @DeleteMapping("/{usuarioId}")
@@ -58,5 +52,4 @@ public class UsuarioController {
         return new ResponseEntity<>("Usuário deletado com sucesso!", HttpStatus.OK);
     }
 
-    
 }

@@ -41,7 +41,7 @@ public class TipoDeUsuario {
         this.descricao = descricao;
     }
 
-    // Método para adicionar uma descrição no banco de dados
+   
     public void adicionarDescricao() {
         try (Connection conexao = Conexao.obterConexao()) {
             String sql = "INSERT INTO tipodeusuario (descricao) VALUES (?)";
@@ -55,7 +55,7 @@ public class TipoDeUsuario {
         }
     }
 
-    // Método para visualizar a descrição a partir do banco de dados
+ 
     public void visualizarDescricao() {
         try (Connection conexao = Conexao.obterConexao()) {
             String sql = "SELECT idtipodeusuario, descricao FROM tipodeusuario";
@@ -73,7 +73,7 @@ public class TipoDeUsuario {
         }
     }
 
-    // Método para atualizar a descrição no banco de dados
+    
     public void atualizarDescricao() {
         try (Connection conexao = Conexao.obterConexao()) {
             String sql = "UPDATE tipodeusuario SET descricao=? WHERE idtipodeusuario=?";
@@ -88,7 +88,7 @@ public class TipoDeUsuario {
         }
     }
 
-    // Método para deletar a descrição do banco de dados
+   
     public void deletarDescricao() {
         try (Connection conexao = Conexao.obterConexao()) {
             String sql = "DELETE FROM tipodeusuario WHERE idtipodeusuario=?";

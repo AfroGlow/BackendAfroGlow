@@ -24,14 +24,14 @@ public class PedidoBoxService {
         return pedidoBoxRepository.findById(id);
     }
 
-    // Implemente métodos adicionais conforme necessário
+  
 
     private PedidoBox mapPedidoBoxRequestDTOToPedidoBox(PedidoBoxRequestDTO pedidoBoxRequestDTO) {
         PedidoBox pedidoBox = new PedidoBox();
         pedidoBox.setIdUsuario(pedidoBoxRequestDTO.getIdUsuario());
         pedidoBox.setIdBox(pedidoBoxRequestDTO.getIdBox());
         pedidoBox.setIdPagamento(pedidoBoxRequestDTO.getIdPagamento());
-        // Adicione outros mapeamentos conforme necessário
+     
         return pedidoBox;
     }
 

@@ -20,11 +20,11 @@ import br.com.afroglow.backendAfroGlow.Service.PlanosService;
 @RestController
 @RequestMapping("/planos")
 public class PlanosController {
-    // Propriedade Service
+
     @Autowired
     private final PlanosService planosService;
 
-    // Criando Construtor
+
     public PlanosController(PlanosService planosService) {
         this.planosService = planosService;
     }

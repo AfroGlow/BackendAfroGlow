@@ -22,9 +22,9 @@ private Long idAdmin;
     private String dataDeNascimento;
     private String email;
 
-    // Construtor sem inicialização manual do idAdmin
+    
     public Admin() {
-        // Os demais atributos serão inicializados com valores padrão
+   
        
         this.nomeAdmin = "";
         this.senha = "";
@@ -32,7 +32,7 @@ private Long idAdmin;
         this.email = "";
     }
 
-    // Método para adicionar um administrador no banco de dados
+  
     public void adicionarAdmin() {
         try (Connection conexao = Conexao.obterConexao()) {
             String sql = "INSERT INTO administrador (nomeAdmin, senha, dataDeNascimento, email) VALUES (?, ?, ?, ?)";
@@ -43,7 +43,7 @@ private Long idAdmin;
                 statement.setString(4, email);
                 statement.executeUpdate();
 
-                // Obtendo o idAdmin gerado automaticamente
+          
                 ResultSet generatedKeys = statement.getGeneratedKeys();
                 if (generatedKeys.next()) {
                     this.idAdmin = (long) generatedKeys.getInt(1);
@@ -57,7 +57,7 @@ private Long idAdmin;
         }
     }
 
-    // Método para visualizar o administrador a partir do banco de dados
+
     public void visualizarAdmin() {
         try (Connection conexao = Conexao.obterConexao()) {
             String sql = "SELECT nomeAdmin, senha, dataDeNascimento, email FROM administrador WHERE idAdmin=?";
@@ -78,7 +78,6 @@ private Long idAdmin;
         }
     }
 
-    // Método para atualizar o administrador no banco de dados
     public void atualizarAdmin() {
         try (Connection conexao = Conexao.obterConexao()) {
             String sql = "UPDATE administrador SET nomeAdmin=?, senha=?, dataDeNascimento=?, email=? WHERE idAdmin=?";

@@ -10,8 +10,6 @@ public class CriancaRequestDTO {
     private String nomeFantasia;
     private String status;
 
-    // Getters and setters
-
     public Date getDataDeNascimento() {
         return dataDeNascimento;
     }

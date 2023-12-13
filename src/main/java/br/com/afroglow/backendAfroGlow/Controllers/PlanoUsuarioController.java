@@ -19,11 +19,11 @@ import br.com.afroglow.backendAfroGlow.Service.PlanoUsuarioService;
 @RestController
 @RequestMapping("/planoUsuario")
 public class PlanoUsuarioController {
-    // Propriedade Service
+ 
     @Autowired
     private final PlanoUsuarioService planoUsuarioService;
 
-    // Criando construtor
+   
     public PlanoUsuarioController(PlanoUsuarioService planoUsuarioService) {
         this.planoUsuarioService = planoUsuarioService;
     }
@@ -32,7 +32,7 @@ public class PlanoUsuarioController {
     public Optional<PlanoUsuario> getPlanoUsuario(@PathVariable Integer planoUsuarioId) {
         return planoUsuarioService.buscaPlanoUsuario(planoUsuarioId);
     }
-    // //Conferir se faz sentido
+
     @PostMapping
     public ResponseEntity<PlanoUsuario> adicionarPlanoUsuario(@RequestBody PlanoUsuario planoUsuario) {
     planoUsuarioService.adicionarPlanoUsuario(planoUsuario);

@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/crianca")
+@RequestMapping("/api/crianca")
 @CrossOrigin(origins = "*")
 public class CriancaController {
 
@@ -51,14 +51,14 @@ public class CriancaController {
 
     private Crianca mapCriancaRequestDTOToCrianca(CriancaRequestDTO criancaRequestDTO) {
         Crianca crianca = new Crianca();
-        // Mapeie os atributos de CriancaRequestDTO para Crianca aqui
+   
         crianca.setDataDeNascimento(criancaRequestDTO.getDataDeNascimento());
         crianca.setIdDefinicaoDoCabelo(criancaRequestDTO.getIdDefinicaoDoCabelo());
         crianca.setIdUsuario(criancaRequestDTO.getIdUsuario());
         crianca.setNomeCompleto(criancaRequestDTO.getNomeCompleto());
         crianca.setNomeFantasia(criancaRequestDTO.getNomeFantasia());
         crianca.setStatus(criancaRequestDTO.getStatus());
-        // Adicione outros mapeamentos conforme necessário
+      
 
         return crianca;
     }
