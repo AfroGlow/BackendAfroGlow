@@ -13,13 +13,13 @@ const CriancaList = () => {
   }, []);
 
   const fetchCriancas = () => {
-    axios.get('ec2-35-175-211-209.compute-1.amazonaws.com/api/crianca')
+    axios.get('http://localhost:8080/crianca')
       .then(response => setCriancas(response.data))
       .catch(error => console.error('Error fetching data:', error));
   };
 
   const createCrianca = () => {
-    axios.post('ec2-35-175-211-209.compute-1.amazonaws.com/api/crianca', newCrianca)
+    axios.post('http://localhost:8080/crianca', newCrianca)
       .then(() => {
         fetchCriancas();
         setNewCrianca({ nomeCompleto: '', dataDeNascimento: '', status: '' });
@@ -29,7 +29,7 @@ const CriancaList = () => {
   };
 
   const updateCrianca = () => {
-    axios.put(`ec2-35-175-211-209.compute-1.amazonaws.com/api/crianca/${editCrianca.id}`, editCrianca)
+    axios.put(`http://localhost:8080/crianca/${editCrianca.id}`, editCrianca)
       .then(() => {
         fetchCriancas();
         setEditCrianca({ id: null, nomeCompleto: '', dataDeNascimento: '', idDefinicaoDoCabelo: '', idUsuario: '', nomeFantasia: '', status: '' });
@@ -52,7 +52,7 @@ const CriancaList = () => {
   };
 
   const deleteCrianca = (id) => {
-    axios.delete(`ec2-35-175-211-209.compute-1.amazonaws.com:8080/api/crianca/${id}`)
+    axios.delete(`http://localhost:8080/crianca/${id}`)
       .then(() => {
         fetchCriancas();
         setMessage('Criança excluída com sucesso!');

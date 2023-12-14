@@ -27,7 +27,7 @@ const AddCrianca = ({ onAdd }) => {
       return;
     }
 
-    axios.post('ec2-35-175-211-209.compute-1.amazonaws.com:8080/api/crianca', crianca)
+    axios.post('http://localhost:8080/crianca', crianca)
       .then(response => {
         console.log('Criança adicionada:', response.data);
         setSuccess('Criança adicionada com sucesso.');
