@@ -6,20 +6,29 @@ import org.springframework.stereotype.Service;
 import br.com.afroglow.backendAfroGlow.Models.Usuario;
 import br.com.afroglow.backendAfroGlow.Repository.UsuarioRepository;
 
+
 @Service
 public class AuthService {
 
     @Autowired
-    private UsuarioRepository usuarioRepository;
 
-    public boolean autenticar(String nomeCompleto, String senha) {
+    
+private UsuarioRepository usuarioRepository;
 
-        if (nomeCompleto == null || senha == null) {
+    public boolean autenticar(String email, String senha) {
+        Usuario usuario = usuarioRepository.findByEmailAndSenha(email, senha);
+        
+   
+        if (usuario != null) {
+        
+            return true;
+        } else {
+           
             return false;
         }
+    }
 
-        Usuario usuario = usuarioRepository.findByNomeCompletoAndSenha(nomeCompleto, senha);
-
-        return usuario != null;
+    public String gerarToken(Usuario usuario) {
+        return null;
     }
 }

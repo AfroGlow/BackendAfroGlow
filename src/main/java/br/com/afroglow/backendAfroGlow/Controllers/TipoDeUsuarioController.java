@@ -42,10 +42,8 @@ public class TipoDeUsuarioController {
     }
 
     // @DeleteMapping("/{descricao}")
-    // public ResponseEntity<String> deletarTipoDeUsuario(@PathVariable String
-    // descricao) {
-    // tipoDeUsuarioService.deletarTipoDeUsuario(descricao);
-    // return new ResponseEntity<>("Tipo de usuário deletado com sucesso!",
-    // HttpStatus.OK);
+    // public ResponseEntity<String> deletarTipoDeUsuario(@PathVariable String descricao) {
+    //     tipoDeUsuarioService.deletarTipoDeUsuario(descricao);
+    //     return new ResponseEntity<>("Tipo de usuário deletado com sucesso!", HttpStatus.OK);
     // }
 }

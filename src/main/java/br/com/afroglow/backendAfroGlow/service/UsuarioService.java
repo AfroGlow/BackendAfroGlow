@@ -1,53 +1,51 @@
 package br.com.afroglow.backendAfroGlow.Service;
 
-
-import java.util.Optional;
-import java.util.List;
-import org.springframework.stereotype.Service;
 import br.com.afroglow.backendAfroGlow.Models.Usuario;
 import br.com.afroglow.backendAfroGlow.Repository.UsuarioRepository;
+import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UsuarioService {
 
     private final UsuarioRepository usuarioRepository;
 
-
-   
     public UsuarioService(UsuarioRepository usuarioRepository) {
         this.usuarioRepository = usuarioRepository;
     }
-    public Optional<Usuario> buscarUsuario(Integer usuarioId){
-        Optional<Usuario> usuario = usuarioRepository.findById(usuarioId);
 
-        return usuario;
+    public Optional<Usuario> buscarUsuarioPorEmail(String email) {
+        return usuarioRepository.findByEmail(email);
     }
 
     public List<Usuario> retornarListaDeUsuarios() {
         return usuarioRepository.findAll();
-}
+    }
 
-    public void adicionarUsuario(Usuario usuario){
+    public void adicionarUsuario(Usuario usuario) {
         usuarioRepository.save(usuario);
     }
 
-    public void deletarUsuario(Integer usuarioId){
+    public void deletarUsuario(Long usuarioId) {
         usuarioRepository.deleteById(usuarioId);
     }
 
-    public void atualizarUsuario(Usuario usuario){
+    public void atualizarUsuario(Usuario usuario) {
         usuarioRepository.save(usuario);
     }
 
-    public void escolherUsuario(Integer tipoDeUsuarioId, Integer usuarioId){
-        Optional<Usuario> usuarioObjeto = buscarUsuario(usuarioId);
-        if(usuarioObjeto.isPresent()) {
-            usuarioObjeto.get().idTipoDeUsuario = tipoDeUsuarioId;
-            Usuario usuarioAtualizado = new Usuario();
-            // usuarioAtualizado.idUsuario = usuarioObjeto.get().idUsuario;
-            usuarioAtualizado = usuarioObjeto.stream().findFirst().orElse(null);
-            usuarioRepository.save(usuarioAtualizado);
-        } 
-}
+    public void escolherUsuario(Integer tipoDeUsuarioId, Long usuarioId) {
+        Optional<Usuario> usuarioObjeto = usuarioRepository.findById(usuarioId);
+        usuarioObjeto.ifPresent(usuario -> {
+            usuario.setIdTipoDeUsuario(tipoDeUsuarioId);
+            usuarioRepository.save(usuario);
+        });
+    }
+
+    // Este método não faz nada, você pode removê-lo se não for utilizado
+    public Optional<Usuario> buscarUsuario(Long usuarioId) {
+        return usuarioRepository.findById(usuarioId);
+    }
 }

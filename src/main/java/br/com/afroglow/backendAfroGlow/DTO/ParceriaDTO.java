@@ -11,4 +11,7 @@ public class ParceriaDTO {
     private String tipoDeParceria;
     private String validadeDeContrato;
 
+   
 }
+
+

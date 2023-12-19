@@ -3,18 +3,11 @@ package br.com.afroglow.backendAfroGlow.Controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import br.com.afroglow.backendAfroGlow.Models.Usuario;
 import br.com.afroglow.backendAfroGlow.Service.UsuarioService;
+
 import java.util.Optional;
 
 @RestController
@@ -30,9 +23,26 @@ public class UsuarioController {
     }
 
     @GetMapping(value = "/{usuarioId}")
-    public Optional<Usuario> getUsuario(@PathVariable Integer usuarioId) {
-        return usuarioService.buscarUsuario(usuarioId);
+    public ResponseEntity<?> getUsuario(@PathVariable Long usuarioId) {
+        Optional<Usuario> usuarioOptional = usuarioService.buscarUsuario(usuarioId);
+
+        if (usuarioOptional.isPresent()) {
+            return ResponseEntity.ok(usuarioOptional.get());
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
+
+    // @PostMapping(value = "/{usuarioEmail}")
+    // public ResponseEntity<?> getUsuarioPorEmail(@RequestBody String usuarioPorEmail) {
+    //     Optional<Usuario> usuarioOptional = usuarioService.buscarUsuarioPorEmail(usuarioPorEmail);
+
+    //     if (usuarioOptional.isPresent()) {
+    //         return ResponseEntity.ok(usuarioOptional.get());
+    //     } else {
+    //         return ResponseEntity.notFound().build();
+    //     }
+    // }
 
     @PostMapping
     public ResponseEntity<Usuario> adicionarUsuario(@RequestBody Usuario usuario) {
@@ -47,9 +57,8 @@ public class UsuarioController {
     }
 
     @DeleteMapping("/{usuarioId}")
-    public ResponseEntity<String> deletarUsuario(@PathVariable Integer usuarioId) {
+    public ResponseEntity<String> deletarUsuario(@PathVariable Long usuarioId) {
         usuarioService.deletarUsuario(usuarioId);
         return new ResponseEntity<>("Usuário deletado com sucesso!", HttpStatus.OK);
     }
-
 }
