@@ -123,6 +123,7 @@ O backend foi desenvolvido por uma equipe back-end da AfroGlow, gerenciado por [
 - [Jhennifer Ribeiro](https://github.com/JheniferRibeiro)
 - [Anthony Thomas](https://github.com/anthonythom)
 - [Marcos Vinicius](https://github.com/ViniciusV4)
+- [Lilian Carvalho](https://github.com/Lilian-Carvalho25)
   
 Todo o processo de desenvolvimento foi auxiliado por mentores como:
 
